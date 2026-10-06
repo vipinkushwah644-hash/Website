@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download index.html</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-stone-50 p-6 flex flex-col items-center justify-center min-h-[220px]">
+  <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm max-w-md w-full text-center">
+    <h3 class="font-bold text-stone-800 text-lg mb-1">Chetan Modern Photoframe</h3>
+    <p class="text-xs text-stone-500 mb-4">Click below to download your complete, launch-ready website file.</p>
+    <button id="dlBtn" class="w-full py-3 bg-[#141210] hover:bg-[#C59A53] hover:text-[#141210] text-white font-bold rounded-lg transition-colors text-sm shadow-md">
+      ⬇️ Download index.html
+    </button>
+  </div>
+
+  <script>
+    const fullCode = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chetan modern photoframe | Bespoke Framing Studio, Bhopal</title>
+  
+  <script>
+    const _consoleWarn = console.warn;
+    console.warn = function(...args) {
+      if (args[0] && typeof args[0] === 'string' && args[0].includes('cdn.tailwindcss.com')) return;
+      _consoleWarn.apply(console, args);
+    };
+  <\/script>
+
+  <script src="https://cdn.tailwindcss.com"><\/script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"><\/script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"><\/script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              ivory: '#FAF7F2',
+              cream: '#F3EDE4',
+              gold: '#C59A53',
+              goldlight: '#E2B873',
+              dark: '#141210',
+              charcoal: '#211D1A',
+              muted: '#7C7368',
+              maroon: '#6A1A24'
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  <\/script>
+
+  <style>
+    body { background-color: #FAF7F2; color: #211D1A; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+    .font-serif { font-family: 'Cinzel', serif; }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #FAF7F2; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #C59A53; border-radius: 4px; }
+    .frame-shadow { box-shadow: 0 25px 50px -12px rgba(20, 18, 16, 0.45); }
+    .moulding-gold { border-color: #C59A53; box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 10px 25px rgba(0,0,0,0.3); }
+    .moulding-teak { border-color: #533318; box-shadow: inset 0 0 12px rgba(0,0,0,0.6), 0 10px 25px rgba(0,0,0,0.35); }
+    .moulding-black { border-color: #1A1A1A; box-shadow: inset 0 0 8px rgba(255,255,255,0.1), 0 10px 25px rgba(0,0,0,0.4); }
+    .moulding-silver { border-color: #A3A3A3; box-shadow: inset 0 0 10px rgba(0,0,0,0.4), 0 10px 25px rgba(0,0,0,0.25); }
+  </style>
+</head>
+<body class="relative custom-scrollbar">
+
+  <div class="bg-brand-dark text-stone-300 text-xs py-2 px-4 border-b border-stone-800">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-gold"></i>
+        <span>Front of Ganesh Mandir, Chola Naka, Bhopal (M.P.)</span>
+        <span class="hidden md:inline text-stone-600">|</span>
+        <span class="text-brand-gold font-medium">Bespoke Framing & Art Gallery</span>
+      </div>
+      <div class="flex items-center gap-2 bg-stone-900 px-2 py-1 rounded-full border border-stone-800">
+        <span class="text-[11px] text-stone-400 uppercase tracking-wider font-semibold mr-1">Switch View:</span>
+        <button id="roleCustomerBtn" onclick="switchRole('customer')" class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-gold text-brand-dark transition-all">Customer Store</button>
+        <button id="roleOwnerBtn" onclick="promptOwnerLogin()" class="px-2.5 py-0.5 rounded-full text-xs font-semibold text-stone-400 hover:text-white transition-all flex items-center gap-1">
+          <i data-lucide="lock" class="w-3 h-3"></i>
+          <span>Shop Owner Portal</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-40 bg-brand-ivory/90 backdrop-blur-md border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#home" class="flex flex-col">
+        <span class="font-serif text-2xl font-bold tracking-wider text-brand-dark flex items-center gap-2">
+          CHETAN <span class="text-brand-gold font-serif">MODERN PHOTOFRAME</span>
+        </span>
+        <span class="text-[10px] tracking-[0.25em] uppercase text-brand-muted font-medium">Artisanal Framing Studio • Bhopal</span>
+      </a>
+
+      <nav id="customerNavLinks" class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+        <a href="#home" class="text-brand-dark hover:text-brand-gold transition-colors">Home 3D</a>
+        <a href="#readyMade" class="text-brand-dark hover:text-brand-gold transition-colors">Ready-Made Gallery</a>
+        <a href="#customizer" class="text-brand-dark hover:text-brand-gold transition-colors">Standard Studio</a>
+        <a href="#uniqueFrameIdea" class="text-brand-gold font-bold hover:text-brand-dark transition-colors flex items-center gap-1.5">
+          <i data-lucide="sparkles" class="w-4 h-4"></i> Pitch Unique Idea
+        </a>
+        <a href="#replacementPolicy" class="text-brand-dark hover:text-brand-gold transition-colors text-xs font-semibold bg-stone-100 px-2.5 py-1 rounded">Policy</a>
+        <a href="#location" class="text-brand-dark hover:text-brand-gold transition-colors">Visit Shop</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <div id="authHeaderContainer">
+          <button onclick="openAuthModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-stone-300 hover:border-brand-gold text-brand-dark bg-white transition-all">
+            <i data-lucide="mail" class="w-3.5 h-3.5 text-brand-gold"></i>
+            <span>Customer Login</span>
+          </button>
+        </div>
+
+        <button onclick="toggleCart()" class="relative p-2 text-brand-dark hover:text-brand-gold transition-colors" title="Cart">
+          <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+          <span id="cartBadge" class="absolute top-0 right-0 bg-brand-gold text-brand-dark text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="customerSection">
+    <section id="home" class="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-b from-brand-ivory via-brand-cream/60 to-brand-ivory overflow-hidden border-b border-stone-200">
+      <div id="threeHeroCanvas" class="absolute inset-0 w-full h-full pointer-events-auto cursor-grab active:cursor-grabbing"></div>
+
+      <div class="relative z-10 max-w-5xl mx-auto px-4 text-center pointer-events-none mt-12 mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-dark/10 backdrop-blur-md border border-brand-gold/30 text-xs font-semibold text-brand-dark uppercase tracking-widest mb-4">
+          <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
+          Bhopal's Premier Handcrafted Photo Framing Studio
+        </div>
+        <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold text-brand-dark tracking-tight leading-tight mb-4 drop-shadow-sm">
+          Preserve Life's <span class="italic font-normal text-brand-gold">Precious</span> Moments
+        </h1>
+        <p class="max-w-2xl mx-auto text-base sm:text-lg text-brand-muted font-normal mb-8 drop-shadow-sm">
+          Welcome to <strong class="text-brand-dark font-semibold">Chetan modern photoframe</strong> at Chola Naka, Bhopal. Explore ready-to-hang framed art, build custom frames online, or pitch an exclusive frame concept directly to our master framer.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto">
+          <a href="#customizer" class="w-full sm:w-auto px-8 py-3.5 bg-brand-dark text-brand-ivory hover:bg-brand-gold hover:text-brand-dark transition-all rounded-md font-semibold text-sm tracking-wide shadow-lg flex items-center justify-center gap-2">
+            <i data-lucide="sliders" class="w-4 h-4"></i> Customise Frame
+          </a>
+          <a href="#uniqueFrameIdea" class="w-full sm:w-auto px-8 py-3.5 bg-brand-gold text-brand-dark hover:bg-brand-goldlight transition-all rounded-md font-bold text-sm tracking-wide shadow-md flex items-center justify-center gap-2">
+            <i data-lucide="lightbulb" class="w-4 h-4"></i> Pitch Unique Idea
+          </a>
+          <a href="#readyMade" class="w-full sm:w-auto px-8 py-3.5 bg-white/80 hover:bg-white text-brand-dark border border-stone-300 transition-all rounded-md font-semibold text-sm tracking-wide shadow-sm flex items-center justify-center gap-2">
+            <i data-lucide="image" class="w-4 h-4"></i> Gallery
+          </a>
+        </div>
+        
+        <p class="text-xs text-stone-500 mt-6 tracking-wide">
+          ✨ <span class="italic">Interact with the 3D frame stage and golden butterflies with your cursor</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-brand-cream py-6 border-b border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div><p class="font-serif text-2xl font-bold text-brand-dark">15+ Years</p><p class="text-xs text-brand-muted uppercase tracking-wider">Heritage Workshop</p></div>
+        <div><p class="font-serif text-2xl font-bold text-brand-dark">500+ Styles</p><p class="text-xs text-brand-muted uppercase tracking-wider">Mouldings & Mats</p></div>
+        <div><p class="font-serif text-2xl font-bold text-brand-dark">Chola Naka</p><p class="text-xs text-brand-muted uppercase tracking-wider">Opp. Ganesh Mandir</p></div>
+        <div><p class="font-serif text-2xl font-bold text-brand-dark">Unboxing Video</p><p class="text-xs text-brand-muted uppercase tracking-wider">Replacement Guarantee</p></div>
+      </div>
+    </section>
+
+    <section id="readyMade" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-stone-200">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Curated Collection</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark mt-1">Ready-to-Hang Framed Art</h2>
+        </div>
+        <div class="mt-4 md:mt-0 flex flex-wrap gap-2" id="categoryFilterContainer">
+          <button onclick="filterProducts('All')" class="category-btn active px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-dark text-white">All</button>
+          <button onclick="filterProducts('Spiritual')" class="category-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-stone-200 text-brand-dark hover:bg-stone-300">Spiritual</button>
+          <button onclick="filterProducts('Nature')" class="category-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-stone-200 text-brand-dark hover:bg-stone-300">Nature</button>
+          <button onclick="filterProducts('Modern')" class="category-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-stone-200 text-brand-dark hover:bg-stone-300">Modern Abstract</button>
+          <button onclick="filterProducts('Vintage')" class="category-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-stone-200 text-brand-dark hover:bg-stone-300">Heritage</button>
+        </div>
+      </div>
+      <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+    <section id="customizer" class="py-20 bg-brand-cream/80 border-y border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Online Frame Configurator</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark mt-1">Customise Your Photo Frame Online</h2>
+          <p class="text-sm text-brand-muted mt-2">Upload your portrait, choose your preferred frame moulding, select mat border widths, and view live pricing.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7 bg-white p-6 rounded-xl border border-stone-200 shadow-md">
+            <div class="flex items-center justify-between pb-4 border-b border-stone-100 mb-6">
+              <span class="text-xs font-bold uppercase text-stone-500 tracking-wider">Simulate Room Wall:</span>
+              <div class="flex gap-2">
+                <button onclick="setWallColor('#F4F1EA')" class="w-6 h-6 rounded-full border border-stone-300 bg-[#F4F1EA]" title="Ivory Wall"></button>
+                <button onclick="setWallColor('#38423B')" class="w-6 h-6 rounded-full border border-stone-300 bg-[#38423B]" title="Sage Olive"></button>
+                <button onclick="setWallColor('#262626')" class="w-6 h-6 rounded-full border border-stone-300 bg-[#262626]" title="Charcoal"></button>
+                <button onclick="setWallColor('#E8D8C8')" class="w-6 h-6 rounded-full border border-stone-300 bg-[#E8D8C8]" title="Warm Terracotta"></button>
+              </div>
+            </div>
+
+            <div id="virtualWall" class="relative w-full h-[450px] sm:h-[500px] flex items-center justify-center p-8 rounded-lg transition-colors duration-300 bg-[#F4F1EA]">
+              <div id="frameContainer" class="transition-all duration-300 p-6 bg-white frame-shadow border-[20px] moulding-gold max-w-[85%] max-h-[85%] flex items-center justify-center">
+                <div id="matBoard" class="bg-[#FAF7F2] p-6 transition-all duration-300 flex items-center justify-center border border-stone-200 shadow-inner">
+                  <div class="relative overflow-hidden max-w-[260px] max-h-[300px]">
+                    <img id="customPreviewImage" src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Frame preview" class="w-full h-full object-cover">
+                    <div id="glassGlare" class="absolute inset-0 bg-gradient-to-tr from-white/10 via-white/5 to-transparent pointer-events-none"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 text-center">
+              <span id="currentSpecSummary" class="text-xs text-brand-muted font-medium">Dimensions: 12" × 16" • Moulding: Royal Gilded Gold • Mat: 2.0" Ivory • Clear Acrylic Glass</span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-white p-6 rounded-xl border border-stone-200 shadow-md space-y-6">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-2">1. Upload Your Photo or Portrait</label>
+              <div class="flex items-center gap-3">
+                <label class="flex-1 cursor-pointer border-2 border-dashed border-stone-300 hover:border-brand-gold rounded-lg p-3 text-center transition-colors">
+                  <i data-lucide="upload-cloud" class="w-5 h-5 mx-auto text-brand-gold mb-1"></i>
+                  <span class="text-xs text-stone-600 font-medium">Select high-res image</span>
+                  <input type="file" id="userPhotoInput" accept="image/*" class="hidden" onchange="handleUserPhotoUpload(event)">
+                </label>
+                <button onclick="setSamplePhoto()" class="text-xs px-3 py-3 border border-stone-200 rounded-lg hover:bg-stone-50 font-medium">Sample</button>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-2">2. Select Frame Moulding Style</label>
+              <div class="grid grid-cols-2 gap-2" id="mouldingSelector">
+                <button onclick="setMoulding('gold', 'Royal Gilded Gold', 350)" class="moulding-btn active border-2 border-brand-gold p-2.5 rounded-lg flex items-center gap-2 text-left bg-stone-50">
+                  <span class="w-4 h-4 rounded-full bg-[#C59A53] border border-black/20"></span>
+                  <span class="text-xs font-semibold">Gilded Gold</span>
+                </button>
+                <button onclick="setMoulding('teak', 'Indian Teak Wood', 400)" class="moulding-btn border border-stone-200 p-2.5 rounded-lg flex items-center gap-2 text-left hover:bg-stone-50">
+                  <span class="w-4 h-4 rounded-full bg-[#533318] border border-black/20"></span>
+                  <span class="text-xs font-semibold">Indian Teak</span>
+                </button>
+                <button onclick="setMoulding('black', 'Matte Obsidian Black', 250)" class="moulding-btn border border-stone-200 p-2.5 rounded-lg flex items-center gap-2 text-left hover:bg-stone-50">
+                  <span class="w-4 h-4 rounded-full bg-[#1A1A1A] border border-black/20"></span>
+                  <span class="text-xs font-semibold">Matte Black</span>
+                </button>
+                <button onclick="setMoulding('silver', 'Brushed Champagne Silver', 300)" class="moulding-btn border border-stone-200 p-2.5 rounded-lg flex items-center gap-2 text-left hover:bg-stone-50">
+                  <span class="w-4 h-4 rounded-full bg-[#A3A3A3] border border-black/20"></span>
+                  <span class="text-xs font-semibold">Brushed Silver</span>
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-brand-dark">3. Picture Dimensions</label>
+                <span id="dimensionLabel" class="text-xs font-bold text-brand-gold">12" × 16" (Standard)</span>
+              </div>
+              <select id="sizeSelector" onchange="handleSizeChange(this.value)" class="w-full text-xs font-medium border border-stone-300 rounded-lg p-2.5 bg-white focus:outline-none focus:border-brand-gold">
+                <option value="8x10">8" × 10" (Desk Frame) - Base ₹450</option>
+                <option value="12x16" selected>12" × 16" (Standard Portrait) - Base ₹750</option>
+                <option value="16x20">16" × 20" (Family Photo) - Base ₹1,150</option>
+                <option value="20x24">20" × 24" (Grand Wall Statement) - Base ₹1,650</option>
+                <option value="24x36">24" × 36" (Full Gallery Canvas) - Base ₹2,450</option>
+              </select>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label class="text-xs font-bold uppercase tracking-wider text-brand-dark">4. Mat Border Width</label>
+                <span id="matWidthValue" class="text-xs font-bold text-brand-dark">2.0 inches</span>
+              </div>
+              <input type="range" id="matSlider" min="0" max="4" step="0.5" value="2" oninput="handleMatChange(this.value)" class="w-full accent-brand-gold cursor-pointer">
+              
+              <div class="flex items-center gap-2 mt-2">
+                <span class="text-[11px] text-stone-500">Mat Colour:</span>
+                <button onclick="setMatColor('#FAF7F2', 'Ivory')" class="px-2 py-0.5 text-[10px] rounded border border-stone-300 bg-[#FAF7F2] font-semibold">Ivory</button>
+                <button onclick="setMatColor('#FFFFFF', 'Pure White')" class="px-2 py-0.5 text-[10px] rounded border border-stone-300 bg-white font-semibold">White</button>
+                <button onclick="setMatColor('#1C1A17', 'Deep Black')" class="px-2 py-0.5 text-[10px] rounded border border-stone-300 bg-black text-white font-semibold">Black</button>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-2">5. Glass / Glaze Type</label>
+              <div class="grid grid-cols-2 gap-2">
+                <label class="flex items-center gap-2 border border-stone-200 p-2 rounded-lg cursor-pointer hover:bg-stone-50 text-xs">
+                  <input type="radio" name="glassType" value="standard" checked onchange="handleGlassChange('standard', 0)" class="accent-brand-gold">
+                  <span>Clear Acrylic (+₹0)</span>
+                </label>
+                <label class="flex items-center gap-2 border border-stone-200 p-2 rounded-lg cursor-pointer hover:bg-stone-50 text-xs">
+                  <input type="radio" name="glassType" value="museum" onchange="handleGlassChange('museum', 350)" class="accent-brand-gold">
+                  <span class="font-semibold text-brand-dark">Anti-Glare Glass (+₹350)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="bg-brand-ivory p-4 rounded-lg border border-stone-200 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-brand-muted block font-medium">Estimated Price</span>
+                <span id="calculatedPriceDisplay" class="font-serif text-3xl font-bold text-brand-dark">₹1,100</span>
+              </div>
+              <div class="text-right">
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800">Ready in 24-48 hrs</span>
+                <span class="block text-[11px] text-stone-500">Opp. Ganesh Mandir, Chola</span>
+              </div>
+            </div>
+
+            <button onclick="handleCustomOrderClick()" class="w-full py-3.5 bg-brand-dark hover:bg-brand-gold hover:text-brand-dark text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2 text-sm tracking-wide shadow-md">
+              <i data-lucide="check-circle" class="w-4 h-4"></i>
+              <span>Order Custom Frame (₹<span id="orderBtnPrice">1,100</span>)</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="uniqueFrameIdea" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-brand-charcoal via-brand-dark to-[#100D0B] text-white rounded-3xl p-8 sm:p-14 border border-brand-gold/30 shadow-2xl relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-5 space-y-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-gold/20 text-brand-goldlight text-[11px] font-bold rounded-full uppercase tracking-wider border border-brand-gold/30">
+              <i data-lucide="gem" class="w-3.5 h-3.5"></i> Bespoke Commissions Desk
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-brand-ivory leading-tight">Have a Unique Frame Idea in Mind?</h2>
+            <p class="text-stone-300 text-sm leading-relaxed">Want a 3D shadow box for wedding garlands, carved antique temple wood, hexagonal shapes, velvet backing, or custom-embossed gold lettering?</p>
+            <p class="text-stone-400 text-xs leading-relaxed">Submit your idea and dimensions here. <strong class="text-brand-gold">Only our Shop Owner at Chola Naka can view your submission</strong> in the private dashboard and will formulate a custom quote for you.</p>
+          </div>
+
+          <div class="lg:col-span-7 bg-white text-brand-dark p-6 sm:p-8 rounded-2xl shadow-xl">
+            <h3 class="font-serif text-xl font-bold text-brand-dark mb-1">Commission Your Unique Frame</h3>
+            <p class="text-xs text-stone-500 mb-6">Fill in the details below. We review all custom concepts within 24 hours.</p>
+
+            <form onsubmit="submitUniqueConcept(event)" class="space-y-4 text-xs">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div><label class="block font-bold text-brand-dark mb-1">Your Full Name *</label><input type="text" id="pitchName" required placeholder="e.g. Vikram Sharma" class="w-full p-2.5 border border-stone-300 rounded-lg"></div>
+                <div><label class="block font-bold text-brand-dark mb-1">Mobile Number *</label><input type="tel" id="pitchPhone" required placeholder="e.g. +91 98930 11223" class="w-full p-2.5 border border-stone-300 rounded-lg"></div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div><label class="block font-bold text-brand-dark mb-1">Email (Gmail) *</label><input type="email" id="pitchEmail" required placeholder="e.g. vikram@gmail.com" class="w-full p-2.5 border border-stone-300 rounded-lg"></div>
+                <div><label class="block font-bold text-brand-dark mb-1">Approx. Size & Budget (₹)</label><input type="text" id="pitchBudget" placeholder="e.g. 24x36 in, ₹3,500 - ₹5,000" class="w-full p-2.5 border border-stone-300 rounded-lg"></div>
+              </div>
+              <div><label class="block font-bold text-brand-dark mb-1">Describe Your Unique Frame Idea *</label><textarea id="pitchIdeaText" rows="3" required placeholder="Describe material preferences, depth, special styling..." class="w-full p-2.5 border border-stone-300 rounded-lg"></textarea></div>
+              <div><label class="block font-bold text-brand-dark mb-1">Upload Reference Sketch or Sample Photo (Optional)</label><input type="file" id="pitchPhotoFile" accept="image/*" onchange="handlePitchImageUpload(event)" class="w-full text-xs text-stone-500 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-brand-ivory file:text-brand-dark hover:file:bg-brand-gold"><input type="hidden" id="pitchImageBase64"></div>
+              <button type="submit" class="w-full py-3.5 bg-brand-gold hover:bg-brand-goldlight text-brand-dark font-bold rounded-lg transition-colors flex items-center justify-center gap-2 text-sm tracking-wide shadow-md">
+                <i data-lucide="send" class="w-4 h-4"></i><span>Submit Concept Directly to Shop Owner</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="replacementPolicy" class="py-12 bg-stone-100 border-t border-stone-200">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <span class="inline-block p-2 bg-amber-100 text-amber-900 rounded-full mb-3"><i data-lucide="alert-circle" class="w-6 h-6"></i></span>
+        <h3 class="font-serif text-2xl font-bold text-brand-dark">Important Replacement & Unboxing Policy</h3>
+        <p class="text-xs sm:text-sm text-stone-600 mt-2 leading-relaxed">Because picture frames and museum glass are fragile and custom-fabricated to size, we maintain a <strong>Strict No-Refund Policy</strong>. Replacement is provided <strong>only</strong> in case of verified transit damage. Customers must record a continuous, uncut <strong>Parcel Unboxing Video</strong> showing the outer shipping label and inspection upon arrival.</p>
+      </div>
+    </section>
+
+    <section id="location" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-brand-dark text-white rounded-2xl overflow-hidden shadow-xl grid grid-cols-1 md:grid-cols-2">
+        <div class="p-8 sm:p-12 flex flex-col justify-center">
+          <div class="inline-flex items-center gap-2 text-brand-gold text-xs font-bold uppercase tracking-widest mb-3"><i data-lucide="map-pin" class="w-4 h-4"></i> Visit Our Bhopal Studio</div>
+          <h3 class="font-serif text-3xl sm:text-4xl font-bold mb-4">Chetan modern photoframe</h3>
+          <p class="text-stone-300 text-sm leading-relaxed mb-6">Located directly opposite to <strong class="text-brand-gold">Ganesh Mandir at Chola Naka</strong>, we craft custom frames for fine art, family portraits, certificates, and religious tapestries.</p>
+          <div class="space-y-3 text-xs text-stone-300 border-t border-stone-800 pt-6">
+            <div class="flex items-start gap-3"><i data-lucide="navigation" class="w-4 h-4 text-brand-gold shrink-0 mt-0.5"></i><span>Front of Ganesh Mandir, Chola Naka Road, Bhopal, Madhya Pradesh 462001</span></div>
+            <div class="flex items-center gap-3"><i data-lucide="clock" class="w-4 h-4 text-brand-gold shrink-0"></i><span>Open Monday to Saturday: 10:00 AM – 9:00 PM</span></div>
+          </div>
+        </div>
+        <div class="bg-stone-800 relative min-h-[300px] flex items-center justify-center p-8 text-center border-t md:border-t-0 md:border-l border-stone-800">
+          <div>
+            <div class="w-16 h-16 bg-brand-gold/20 text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 border border-brand-gold/40"><i data-lucide="compass" class="w-8 h-8"></i></div>
+            <h4 class="font-serif text-xl font-bold text-white mb-2">Chola Naka Landmark</h4>
+            <p class="text-xs text-stone-400 max-w-sm mx-auto mb-6">Opposite Shree Ganesh Mandir. Easy roadside parking and express framing service available.</p>
+            <a href="https://maps.google.com/?q=Ganesh+Mandir+Chola+Naka+Bhopal" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand-gold text-brand-dark text-xs font-bold hover:bg-brand-goldlight transition-colors"><i data-lucide="external-link" class="w-4 h-4"></i> Open in Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="ownerSection" class="hidden min-h-screen bg-stone-100 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <span class="inline-block px-2.5 py-1 bg-amber-100 text-amber-900 text-[11px] font-bold rounded-md mb-1 uppercase tracking-wider">Owner Dashboard • PIN Protected</span>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-brand-dark">Chetan modern photoframe Management</h2>
+          <p class="text-xs text-brand-muted">Chola Naka Store • Manage new frames, configure UPI/QR, view confidential unique ideas & process customer orders.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="openNewFrameModal()" class="px-4 py-2.5 bg-brand-dark text-white rounded-lg text-xs font-bold hover:bg-brand-gold hover:text-brand-dark transition-all flex items-center gap-2"><i data-lucide="plus-circle" class="w-4 h-4"></i> List New Ready-Made Frame</button>
+          <button onclick="switchRole('customer')" class="px-4 py-2.5 bg-stone-200 text-brand-dark rounded-lg text-xs font-bold hover:bg-stone-300 transition-all">Exit Portal</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-8">
+        <div class="bg-white p-5 rounded-xl border border-stone-200"><span class="text-xs text-stone-500 uppercase tracking-wider">New Unique Ideas</span><p id="ownerUniqueIdeasCount" class="font-serif text-3xl font-bold text-amber-600 mt-1">1</p></div>
+        <div class="bg-white p-5 rounded-xl border border-stone-200"><span class="text-xs text-stone-500 uppercase tracking-wider">Ready-Made Stock</span><p id="ownerStockCount" class="font-serif text-3xl font-bold text-brand-dark mt-1">6</p></div>
+        <div class="bg-white p-5 rounded-xl border border-stone-200"><span class="text-xs text-stone-500 uppercase tracking-wider">Active Store Orders</span><p id="ownerTotalOrdersCount" class="font-serif text-3xl font-bold text-brand-gold mt-1">2</p></div>
+        <div class="bg-white p-5 rounded-xl border border-stone-200"><span class="text-xs text-stone-500 uppercase tracking-wider">Workshop Status</span><p class="text-sm font-bold text-emerald-600 mt-2 flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Active & Framing</p></div>
+      </div>
+
+      <div class="bg-white rounded-xl border-2 border-emerald-500/30 shadow-sm p-6 mb-8">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-stone-100">
+          <div>
+            <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 uppercase">Payment Engine</span><h3 class="font-serif text-lg font-bold text-brand-dark">Configure Shop UPI ID & QR Code</h3></div>
+            <p class="text-xs text-stone-500 mt-0.5">Set the exact UPI ID and QR code where customers will send prepaid order payments.</p>
+          </div>
+          <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Live Customer Gateway</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+          <form onsubmit="handleSaveOwnerPaymentSettings(event)" class="md:col-span-8 space-y-4 text-xs">
+            <div>
+              <label class="block font-bold text-brand-dark mb-1">Store UPI ID (VPA) *</label>
+              <input type="text" id="ownerUpiIdInput" required placeholder="e.g. chetanframes@okaxis or 9893011223@paytm" class="w-full p-2.5 border border-stone-300 rounded-lg font-mono font-medium focus:border-brand-gold focus:outline-none">
+            </div>
+            <div>
+              <label class="block font-bold text-brand-dark mb-1">Custom Shop QR Code Image URL (Optional)</label>
+              <input type="url" id="ownerQrUrlInput" placeholder="https://..." class="w-full p-2.5 border border-stone-300 rounded-lg text-stone-600 focus:border-brand-gold focus:outline-none">
+            </div>
+            <div>
+              <label class="block font-bold text-brand-dark mb-1">Or Upload QR Code Image from Device</label>
+              <input type="file" id="ownerQrFileInput" accept="image/*" onchange="handleOwnerQrFileUpload(event)" class="w-full text-xs text-stone-500 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-stone-100 file:text-brand-dark hover:file:bg-brand-gold">
+            </div>
+            <div class="pt-2">
+              <button type="submit" class="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-bold flex items-center gap-2 transition-colors shadow"><i data-lucide="check" class="w-4 h-4"></i><span>Save Payment Settings</span></button>
+            </div>
+          </form>
+
+          <div class="md:col-span-4 bg-stone-50 border border-stone-200 rounded-xl p-4 text-center">
+            <span class="text-[10px] uppercase font-bold text-stone-400 tracking-wider block mb-2">Customer Payment Preview</span>
+            <div class="w-40 h-40 bg-white border border-stone-300 rounded-lg mx-auto p-2 flex items-center justify-center shadow-inner">
+              <img id="ownerLiveQrPreview" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=upi%3A%2F%2Fpay%3Fpa%3Dchetanframes%40upi%26pn%3DChetan%20modern%20photoframe" alt="UPI QR Code" class="w-full h-full object-contain">
+            </div>
+            <div class="mt-2 text-xs">
+              <span class="text-[11px] text-stone-500 block">Current Active UPI:</span>
+              <strong id="ownerCurrentUpiLabel" class="font-mono text-brand-dark font-bold text-xs">chetanframes@upi</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border-2 border-brand-gold/40 shadow-sm p-6 mb-8">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-stone-100">
+          <div>
+            <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 uppercase">Private to Owner</span><h3 class="font-serif text-lg font-bold text-brand-dark">Confidential Custom Frame Ideas & Pitches</h3></div>
+            <p class="text-xs text-stone-500 mt-0.5">Submitted by customers with bespoke artistic requirements. Review concept and set a custom quote.</p>
+          </div>
+          <span class="text-xs font-semibold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded-full">Idea Desk</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-stone-50 text-stone-600 uppercase tracking-wider text-[10px]">
+              <tr><th class="py-3 px-4">Concept ID & Time</th><th class="py-3 px-4">Client Contact</th><th class="py-3 px-4">Idea & Requirements</th><th class="py-3 px-4">Ref Image</th><th class="py-3 px-4">Budget / Size</th><th class="py-3 px-4">Status</th><th class="py-3 px-4 text-right">Owner Action</th></tr>
+            </thead>
+            <tbody id="uniqueIdeasTableBody" class="divide-y divide-stone-100 font-medium"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-stone-200 shadow-sm p-6 mb-8">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-stone-100">
+          <div><h3 class="font-serif text-lg font-bold text-brand-dark">Customer Orders Queue</h3><p class="text-xs text-stone-500">Orders placed online. Review payment method, delivery mode, and update production status.</p></div>
+          <span class="text-xs font-semibold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded-full">Live Orders</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-stone-50 text-stone-600 uppercase tracking-wider text-[10px]">
+              <tr><th class="py-3 px-4">Order ID & Date</th><th class="py-3 px-4">Customer Details</th><th class="py-3 px-4">Photo Preview</th><th class="py-3 px-4">Framing Specs / Item</th><th class="py-3 px-4">Fulfillment & Payment</th><th class="py-3 px-4">Price (₹)</th><th class="py-3 px-4">Status</th><th class="py-3 px-4 text-right">Action</th></tr>
+            </thead>
+            <tbody id="customOrdersTableBody" class="divide-y divide-stone-100 font-medium"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-stone-200 shadow-sm p-6">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-stone-100">
+          <div><h3 class="font-serif text-lg font-bold text-brand-dark">Store Ready-Made Frames Inventory</h3><p class="text-xs text-stone-500">Add or edit frames displayed in the customer gallery.</p></div>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-stone-50 text-stone-600 uppercase tracking-wider text-[10px]">
+              <tr><th class="py-3 px-4">Artwork Item</th><th class="py-3 px-4">Category</th><th class="py-3 px-4">Frame Type</th><th class="py-3 px-4">Dimensions</th><th class="py-3 px-4">Price (₹)</th><th class="py-3 px-4 text-right">Delete</th></tr>
+            </thead>
+            <tbody id="inventoryTableBody" class="divide-y divide-stone-100"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="authModal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+    <div class="flex items-center justify-center min-h-screen px-4 py-6">
+      <div class="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity" onclick="closeAuthModal()"></div>
+      <div class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 sm:p-8 z-10 border border-stone-200">
+        <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-700"><i data-lucide="x" class="w-5 h-5"></i></button>
+
+        <div id="authStepEmail">
+          <div class="text-center mb-6">
+            <div class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-3 border border-emerald-100">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-brand-dark">Customer Email Verification</h3>
+            <p class="text-xs text-stone-500 mt-1">We will email you a secure confirmation link. Just click the link to confirm instantly!</p>
+          </div>
+          <form onsubmit="handleSendRealSupabaseMagicLink(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-brand-dark mb-1">Your Real Gmail Address</label>
+              <input type="email" id="authEmailInput" required placeholder="e.g. yourname@gmail.com" class="w-full text-xs p-3 border border-stone-300 rounded-lg focus:outline-none focus:border-brand-gold">
+            </div>
+            <button type="submit" id="sendOtpSubmitBtn" class="w-full py-3 bg-brand-dark text-white rounded-lg text-xs font-bold hover:bg-brand-gold hover:text-brand-dark transition-colors flex items-center justify-center gap-2"><i data-lucide="send" class="w-4 h-4"></i><span>Send Confirmation Link to My Email</span></button>
+          </form>
+          <p class="text-[11px] text-stone-400 text-center mt-4">Secured by Supabase Auth.</p>
+        </div>
+
+        <div id="authStepSent" class="hidden text-center py-4 space-y-4">
+          <div class="w-16 h-16 rounded-full bg-amber-50 text-brand-gold flex items-center justify-center mx-auto border border-amber-200"><i data-lucide="mail-check" class="w-8 h-8"></i></div>
+          <div>
+            <h3 class="font-serif text-xl font-bold text-brand-dark">Check Your Email!</h3>
+            <p class="text-xs text-stone-600 mt-2">We sent an instant sign-in link to: <br><strong id="displayTargetEmail" class="text-brand-dark text-sm">user@gmail.com</strong></p>
+            <p class="text-[11px] text-stone-500 mt-2 leading-relaxed">Open your inbox and click <strong>"Confirm Your Email"</strong> to be logged in automatically.</p>
+          </div>
+          <div class="pt-4 flex justify-center gap-3 text-xs">
+            <button type="button" onclick="handleResendMagicLink()" class="px-3 py-1.5 border border-stone-200 rounded-lg hover:bg-stone-50 font-medium">Resend Link</button>
+            <button type="button" onclick="resetAuthFlow()" class="px-3 py-1.5 border border-stone-200 rounded-lg hover:bg-stone-50 font-medium">Use Another Email</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-xs transition-opacity" onclick="toggleCart()"></div>
+    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+      <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+        <div class="p-6 bg-brand-ivory border-b border-stone-200 flex items-center justify-between">
+          <div class="flex items-center gap-2"><i data-lucide="shopping-bag" class="w-5 h-5 text-brand-gold"></i><h3 class="font-serif text-lg font-bold text-brand-dark">Your Order Cart</h3></div>
+          <button onclick="toggleCart()" class="text-stone-400 hover:text-brand-dark"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+        <div id="cartItemsList" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-stone-100"></div>
+        <div class="p-6 bg-stone-50 border-t border-stone-200 space-y-4">
+          <div class="flex justify-between text-sm"><span class="text-stone-500">Workshop Location:</span><span class="font-semibold text-brand-dark">Chola Naka, Bhopal</span></div>
+          <div class="flex justify-between text-base font-bold"><span>Total Payable:</span><span id="cartTotalDisplay" class="font-serif text-xl text-brand-dark">₹0</span></div>
+          <button onclick="startCheckoutFromCart()" class="w-full py-3.5 bg-brand-dark text-white rounded-lg font-bold text-sm hover:bg-brand-gold hover:text-brand-dark transition-colors flex items-center justify-center gap-2 shadow-md"><i data-lucide="credit-card" class="w-4 h-4"></i><span>Proceed to Checkout</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="checkoutModal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+    <div class="flex items-center justify-center min-h-screen px-4 py-6">
+      <div class="fixed inset-0 bg-black/60 backdrop-blur-xs" onclick="closeCheckoutModal()"></div>
+      <div class="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 sm:p-8 z-10 border border-stone-200">
+        <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-700"><i data-lucide="x" class="w-5 h-5"></i></button>
+
+        <div class="text-center mb-6">
+          <span class="inline-block px-2.5 py-0.5 bg-brand-gold/10 text-brand-gold text-[10px] font-bold rounded mb-1 uppercase tracking-wider">Secure Online Checkout</span>
+          <h3 class="font-serif text-2xl font-bold text-brand-dark">Complete Your Order</h3>
+          <p class="text-xs text-stone-500 mt-1">Select your preferred delivery and payment method.</p>
+        </div>
+
+        <div class="bg-brand-ivory p-3.5 rounded-lg border border-stone-200 mb-6 flex justify-between items-center text-xs">
+          <div><span id="checkoutItemDescription" class="font-semibold text-brand-dark block truncate max-w-[240px]">Custom Framing Order</span><span id="checkoutUserEmail" class="text-[11px] text-stone-500">user@gmail.com</span></div>
+          <div class="text-right"><span class="text-[10px] uppercase text-stone-400 block font-medium">Payable Amount</span><span id="checkoutTotalAmount" class="font-serif text-xl font-bold text-brand-dark">₹1,100</span></div>
+        </div>
+
+        <form onsubmit="handleFinalOrderSubmission(event)" class="space-y-4 text-xs">
+          <div>
+            <label class="block font-bold text-brand-dark mb-1">Full Name & Mobile Number</label>
+            <div class="grid grid-cols-2 gap-2">
+              <input type="text" id="custFullName" required placeholder="Your Name" class="w-full p-2.5 border border-stone-300 rounded-lg">
+              <input type="tel" id="custPhone" required placeholder="10-digit Mobile" class="w-full p-2.5 border border-stone-300 rounded-lg">
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-bold text-brand-dark mb-2">Select Fulfillment Option</label>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="border-2 border-brand-gold p-3 rounded-xl cursor-pointer bg-brand-cream/40 flex flex-col justify-between" id="labelPrepaidDelivery">
+                <div class="flex items-center gap-2 mb-1"><input type="radio" name="fulfillmentType" value="delivery" checked onchange="toggleFulfillmentMode('delivery')" class="accent-brand-gold"><span class="font-bold text-brand-dark">Doorstep Delivery</span></div>
+                <span class="text-[10px] text-stone-500">Prepayment required before dispatch</span>
+              </label>
+              <label class="border border-stone-200 p-3 rounded-xl cursor-pointer hover:bg-stone-50 flex flex-col justify-between" id="labelStorePickup">
+                <div class="flex items-center gap-2 mb-1"><input type="radio" name="fulfillmentType" value="pickup" onchange="toggleFulfillmentMode('pickup')" class="accent-brand-gold"><span class="font-bold text-brand-dark">Pickup from Shop</span></div>
+                <span class="text-[10px] text-stone-500">Ganesh Mandir, Chola Naka, Bhopal</span>
+              </label>
+            </div>
+          </div>
+
+          <div id="deliveryAddressSection">
+            <label class="block font-bold text-brand-dark mb-1">Delivery Address (Bhopal & Nationwide)</label>
+            <textarea id="deliveryAddressInput" rows="2" placeholder="House/Flat No, Landmark, Area, Bhopal (Pincode)" class="w-full p-2.5 border border-stone-300 rounded-lg"></textarea>
+          </div>
+
+          <div>
+            <label class="block font-bold text-brand-dark mb-2">Payment Method</label>
+            <div id="paymentOptionsContainer" class="space-y-3">
+              <label class="flex flex-col p-3 border rounded-xl border-brand-gold bg-amber-50/40 cursor-pointer">
+                <div class="flex items-start gap-3">
+                  <input type="radio" name="paymentMethod" value="online_prepaid" checked class="mt-0.5 accent-brand-gold">
+                  <div class="flex-1">
+                    <span class="font-bold text-brand-dark block text-xs">Pay Online via UPI / QR (Instant)</span>
+                    <span class="text-[11px] text-stone-500">Scan QR Code or pay directly to the shop's verified UPI ID.</span>
+                  </div>
+                </div>
+                <div id="checkoutQrContainer" class="mt-3 pt-3 border-t border-amber-200/60 flex flex-col sm:flex-row items-center gap-4 bg-white p-3 rounded-lg border border-stone-200">
+                  <img id="checkoutQrImage" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=upi%3A%2F%2Fpay%3Fpa%3Dchetanframes%40upi%26pn%3DChetan%20modern%20photoframe" alt="Scan QR Code" class="w-28 h-28 object-contain border border-stone-200 rounded p-1 bg-white shadow-xs">
+                  <div class="text-left space-y-1">
+                    <span class="text-[10px] uppercase font-bold text-stone-400 block">Verified Shop UPI ID:</span>
+                    <span id="checkoutUpiIdLabel" class="font-mono text-xs font-bold text-brand-dark bg-stone-100 px-2 py-1 rounded inline-block">chetanframes@upi</span>
+                    <p class="text-[10px] text-stone-500">Scan with any UPI app (GPay, PhonePe, Paytm, BHIM).</p>
+                    <a id="checkoutUpiDirectLink" href="upi://pay?pa=chetanframes@upi&pn=Chetan%20modern%20photoframe" class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 hover:bg-emerald-100 transition-colors">
+                      <i data-lucide="smartphone" class="w-3 h-3"></i><span>Open in UPI App</span>
+                    </a>
+                  </div>
+                </div>
+              </label>
+
+              <label id="payAtShopOption" class="hidden flex items-start gap-3 p-3 border rounded-xl border-stone-200 cursor-pointer hover:bg-stone-50">
+                <input type="radio" name="paymentMethod" value="pay_at_shop" class="mt-0.5 accent-brand-gold">
+                <div>
+                  <span class="font-bold text-brand-dark block text-xs">Pay at Shop on Collection</span>
+                  <span class="text-[11px] text-stone-500">Pay via Cash or UPI when collecting your frame at Chola Naka.</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="p-3 bg-stone-50 rounded-lg border border-stone-200">
+            <label class="flex items-start gap-2.5 cursor-pointer">
+              <input type="checkbox" id="unboxingVideoClause" required class="mt-0.5 accent-brand-gold">
+              <span class="text-[11px] text-stone-600 leading-tight">
+                <strong>I agree to the Replacement & Unboxing Policy:</strong> I understand that there are strictly NO refunds. Replacement will be granted only if an unboxing video is recorded at the time of opening the parcel showing any transit damage.
+              </span>
+            </label>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 bg-brand-dark hover:bg-brand-gold hover:text-brand-dark text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2 text-sm tracking-wide shadow-md">
+            <i data-lucide="lock" class="w-4 h-4"></i><span id="submitOrderBtnText">Confirm & Pay Online (₹1,100)</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="newFrameModal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+    <div class="flex items-center justify-center min-h-screen px-4 py-6">
+      <div class="fixed inset-0 bg-black/50" onclick="closeNewFrameModal()"></div>
+      <div class="relative bg-white rounded-xl shadow-xl max-w-md w-full p-6 z-10">
+        <div class="flex justify-between items-center pb-3 border-b border-stone-100 mb-4">
+          <h4 class="font-serif text-lg font-bold text-brand-dark">Add New Ready-Made Frame</h4>
+          <button onclick="closeNewFrameModal()" class="text-stone-400 hover:text-stone-700"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+        <form id="newFrameForm" onsubmit="handleAddNewFrame(event)" class="space-y-4 text-xs">
+          <div><label class="block font-semibold mb-1">Frame Title / Name</label><input type="text" id="newTitle" required placeholder="e.g. Golden Shree Ganesh Ji Mandala" class="w-full p-2.5 border border-stone-300 rounded-lg"></div>
+          <div><label class="block font-semibold mb-1">Category</label><select id="newCategory" class="w-full p-2.5 border border-stone-300 rounded-lg"><option value="Spiritual">Spiritual</option><option value="Nature">Nature</option><option value="Modern">Modern Abstract</option><option value="Vintage">Heritage</option></select></div>
+          <div class="grid grid-cols-2 gap-3">
+            <div><label class="block font-semibold mb-1">Moulding Type</label><input type="text" id="newMoulding" required placeholder="e.g. Gilded Carved Gold" class="w-full p-2.5 border border-stone-300 rounded-lg"></div>
+            <div><label class="block font-semibold mb-1">Size (Inches)</label><input type="text" id="newDimensions" required placeholder="e.g. 18x24 in" class="w-full p-2.5 border border-stone-300 rounded-lg"></div>
+          </div>
+          <div><label class="block font-semibold mb-1">Price in ₹ (INR)</label><input type="number" id="newPrice" required placeholder="1450" class="w-full p-2.5 border border-stone-300 rounded-lg"></div>
+          <div><label class="block font-semibold mb-1">Image URL</label><input type="url" id="newImageUrl" required placeholder="https://images.unsplash.com/..." class="w-full p-2.5 border border-stone-300 rounded-lg"></div>
+          <div class="pt-3 flex gap-2">
+            <button type="button" onclick="closeNewFrameModal()" class="flex-1 py-2 border border-stone-300 rounded-lg font-semibold hover:bg-stone-50">Cancel</button>
+            <button type="submit" class="flex-1 py-2 bg-brand-dark text-white rounded-lg font-semibold hover:bg-brand-gold hover:text-brand-dark transition-colors">Publish to Store</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-brand-dark text-stone-400 text-xs py-10 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div><p class="font-serif text-lg font-bold text-white tracking-wider">CHETAN MODERN PHOTOFRAME</p><p class="text-stone-400 mt-1">In Front of Ganesh Mandir, Chola Naka, Bhopal (M.P.)</p></div>
+      <div class="flex items-center gap-6"><a href="#customizer" class="hover:text-brand-gold transition-colors">Bespoke Customizer</a><a href="#uniqueFrameIdea" class="hover:text-brand-gold transition-colors">Pitch Unique Frame</a><a href="#replacementPolicy" class="hover:text-brand-gold transition-colors">Replacement Policy</a><a href="#location" class="hover:text-brand-gold transition-colors">Visit Chola Naka</a></div>
+      <div><p>© 2026 Chetan modern photoframe. Handcrafted in Bhopal.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    const SUPABASE_PROJECT_URL = "https://zhvbreiarpabcxzjlcny.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpodmJyZWlhcnBhYmN4empsY255Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEyMTEyMDksImV4cCI6MjEwNjc4NzIwOX0.KMoVEIkMDmdUQlzCABhkYonWE8nkGkYzB9Vc4yyk_es";
+
+    let supabaseClient = null;
+    if (window.supabase) {
+      supabaseClient = window.supabase.createClient(SUPABASE_PROJECT_URL, SUPABASE_ANON_KEY);
+    }
+
+    const OWNER_SECURITY_PIN = "9977234854";
+    let currentRole = 'customer';
+    let cart = [];
+    let authenticatedUser = null;
+    let pendingAction = null;
+    let currentCheckoutContext = null;
+
+    let shopPaymentConfig = {
+      upiId: localStorage.getItem('chetan_upi_id') || 'chetanframes@upi',
+      qrImage: localStorage.getItem('chetan_qr_image') || ''
+    };
+
+    let customState = {
+      image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
+      mouldingClass: "moulding-gold",
+      mouldingName: "Royal Gilded Gold",
+      mouldingCost: 350,
+      size: "12x16",
+      basePrice: 750,
+      matWidth: 2,
+      matColor: "#FAF7F2",
+      matColorName: "Ivory",
+      glass: "standard",
+      glassCost: 0
+    };
+
+    let readyMadeProducts = [
+      { id: 1, title: "Lord Ganesha Spiritual Glow", category: "Spiritual", price: 1250, moulding: "Royal Gilded Gold", size: "16x20 inches", image: "https://images.unsplash.com/photo-1567591414240-e145f47053e8?auto=format&fit=crop&w=800&q=80" },
+      { id: 2, title: "Misty Pine Forests of Pachmarhi", category: "Nature", price: 1450, moulding: "Indian Teak Wood", size: "18x24 inches", image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80" },
+      { id: 3, title: "Heritage Fort Architecture", category: "Vintage", price: 1650, moulding: "Brushed Champagne Silver", size: "20x24 inches", image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80" },
+      { id: 4, title: "Golden Aura Abstract Bloom", category: "Modern", price: 950, moulding: "Matte Obsidian Black", size: "12x16 inches", image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80" },
+      { id: 5, title: "Serene Buddha in Meditation", category: "Spiritual", price: 1850, moulding: "Royal Gilded Gold", size: "20x28 inches", image: "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=800&q=80" },
+      { id: 6, title: "Bhopal Lake Sunset Reflections", category: "Nature", price: 1350, moulding: "Indian Teak Wood", size: "16x20 inches", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" }
+    ];
+
+    let uniqueFramePitches = [
+      { id: "IDEA-101", date: "Today, 03:15 PM", clientName: "Ananya Dixit", clientPhone: "+91 97551 22889", clientEmail: "ananya.dixit@gmail.com", idea: "3-inch deep 3D Shadow Box frame with dark green velvet interior for preserving brass temple bell and wedding garland.", dimensions: "18x24 inches", budget: "₹4,000 - ₹5,500", refImage: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=300&q=80", status: "Under Review by Owner" }
+    ];
+
+    let customOrders = [
+      { id: "CM-8041", date: "Today, 11:20 AM", customerName: "Rahul Sharma", customerEmail: "rahul.bhopal@gmail.com", customerPhone: "+91 98930 11223", photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80", size: "16x20", itemSummary: "Custom 16x20\" • Indian Teak Wood", fulfillment: "Doorstep Delivery (Prepaid Online)", price: 1550, status: "Payment Received / Framing" },
+      { id: "CM-8039", date: "Yesterday, 04:45 PM", customerName: "Pooja Verma", customerEmail: "pooja.chola@gmail.com", customerPhone: "+91 94250 44556", photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80", size: "12x16", itemSummary: "Custom 12x16\" • Royal Gilded Gold", fulfillment: "Store Pickup (Pay at Shop)", price: 1200, status: "Ready for Pickup at Chola" }
+    ];
+
+    function syncOwnerPaymentUI() {
+      const upiInput = document.getElementById('ownerUpiIdInput');
+      if (upiInput) upiInput.value = shopPaymentConfig.upiId;
+      const qrUrlInput = document.getElementById('ownerQrUrlInput');
+      if (qrUrlInput) qrUrlInput.value = shopPaymentConfig.qrImage.startsWith('data:') ? '' : shopPaymentConfig.qrImage;
+      const liveLabel = document.getElementById('ownerCurrentUpiLabel');
+      if (liveLabel) liveLabel.innerText = shopPaymentConfig.upiId;
+      const liveQrImg = document.getElementById('ownerLiveQrPreview');
+      if (liveQrImg) liveQrImg.src = getActiveQrCodeUrl();
+      const checkoutUpiLabel = document.getElementById('checkoutUpiIdLabel');
+      if (checkoutUpiLabel) checkoutUpiLabel.innerText = shopPaymentConfig.upiId;
+      const checkoutQrImg = document.getElementById('checkoutQrImage');
+      if (checkoutQrImg) checkoutQrImg.src = getActiveQrCodeUrl();
+      const upiLink = document.getElementById('checkoutUpiDirectLink');
+      if (upiLink) upiLink.href = `upi://pay?pa=${encodeURIComponent(shopPaymentConfig.upiId)}&pn=${encodeURIComponent('Chetan modern photoframe')}&cu=INR`;
+    }
+
+    function getActiveQrCodeUrl() {
+      if (shopPaymentConfig.qrImage && shopPaymentConfig.qrImage.trim() !== '') return shopPaymentConfig.qrImage;
+      return `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent('upi://pay?pa=' + shopPaymentConfig.upiId + '&pn=Chetan modern photoframe&cu=INR')}`;
+    }
+
+    function handleOwnerQrFileUpload(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          shopPaymentConfig.qrImage = evt.target.result;
+          localStorage.setItem('chetan_qr_image', evt.target.result);
+          syncOwnerPaymentUI();
+          alert("QR Code image loaded successfully!");
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function handleSaveOwnerPaymentSettings(e) {
+      e.preventDefault();
+      const upiVal = document.getElementById('ownerUpiIdInput')?.value.trim();
+      const qrUrlVal = document.getElementById('ownerQrUrlInput')?.value.trim();
+      if (upiVal) { shopPaymentConfig.upiId = upiVal; localStorage.setItem('chetan_upi_id', upiVal); }
+      if (qrUrlVal) { shopPaymentConfig.qrImage = qrUrlVal; localStorage.setItem('chetan_qr_image', qrUrlVal); }
+      syncOwnerPaymentUI();
+      alert(`✅ Payment Settings Updated!\n\nStore UPI ID: ${shopPaymentConfig.upiId}`);
+    }
+
+    function handleMatChange(val) {
+      customState.matWidth = parseFloat(val);
+      const widthValEl = document.getElementById('matWidthValue');
+      if (widthValEl) widthValEl.innerText = val + " inches";
+      const matBoardEl = document.getElementById('matBoard');
+      if (matBoardEl) matBoardEl.style.padding = `${Math.round(val * 12)}px`;
+      updateCalculation();
+    }
+
+    function setMatColor(color, name) {
+      customState.matColor = color;
+      customState.matColorName = name;
+      const matBoardEl = document.getElementById('matBoard');
+      if (matBoardEl) matBoardEl.style.backgroundColor = color;
+      updateCalculation();
+    }
+
+    function promptOwnerLogin() {
+      const pin = prompt("🔐 Enter Shop Owner Master Security PIN:", "");
+      if (pin === OWNER_SECURITY_PIN) {
+        switchRole('owner');
+      } else if (pin !== null) {
+        alert("❌ Incorrect PIN. Access denied to Owner Dashboard.");
+      }
+    }
+
+    function switchRole(role) {
+      currentRole = role;
+      const custSec = document.getElementById('customerSection');
+      const ownerSec = document.getElementById('ownerSection');
+      const custBtn = document.getElementById('roleCustomerBtn');
+      const ownerBtn = document.getElementById('roleOwnerBtn');
+      const navLinks = document.getElementById('customerNavLinks');
+
+      if (role === 'owner') {
+        if (custSec) custSec.classList.add('hidden');
+        if (ownerSec) ownerSec.classList.remove('hidden');
+        if (custBtn) custBtn.className = "px-2.5 py-0.5 rounded-full text-xs font-semibold text-stone-400 hover:text-white transition-all";
+        if (ownerBtn) ownerBtn.className = "px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-gold text-brand-dark transition-all flex items-center gap-1";
+        if (navLinks) navLinks.classList.add('opacity-30', 'pointer-events-none');
+        renderOwnerTables();
+        syncOwnerPaymentUI();
+      } else {
+        if (custSec) custSec.classList.remove('hidden');
+        if (ownerSec) ownerSec.classList.add('hidden');
+        if (ownerBtn) ownerBtn.className = "px-2.5 py-0.5 rounded-full text-xs font-semibold text-stone-400 hover:text-white transition-all flex items-center gap-1";
+        if (custBtn) custBtn.className = "px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-gold text-brand-dark transition-all";
+        if (navLinks) navLinks.classList.remove('opacity-30', 'pointer-events-none');
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function updateCalculation() {
+      const total = customState.basePrice + customState.mouldingCost + (customState.matWidth * 75) + customState.glassCost;
+      const formatted = "₹" + Math.round(total).toLocaleString('en-IN');
+      const calcDisplay = document.getElementById('calculatedPriceDisplay');
+      if (calcDisplay) calcDisplay.innerText = formatted;
+      const orderBtnPrice = document.getElementById('orderBtnPrice');
+      if (orderBtnPrice) orderBtnPrice.innerText = Math.round(total).toLocaleString('en-IN');
+      const specSummary = document.getElementById('currentSpecSummary');
+      if (specSummary) specSummary.innerText = `Dimensions: ${customState.size}" • Moulding: ${customState.mouldingName} • Mat: ${customState.matWidth}" ${customState.matColorName} •${customState.glass === 'museum' ? 'Anti-Glare Museum Glass' : 'Clear Acrylic'}`;
+    }
+
+    function setMoulding(key, name, cost) {
+      customState.mouldingClass = `moulding-${key}`;
+      customState.mouldingName = name;
+      customState.mouldingCost = cost;
+      const frameContainer = document.getElementById('frameContainer');
+      if (frameContainer) frameContainer.className = `transition-all duration-300 p-6 bg-white frame-shadow border-[20px] moulding-${key} max-w-[85%] max-h-[85%] flex items-center justify-center`;
+      document.querySelectorAll('#mouldingSelector .moulding-btn').forEach(b => {
+        b.classList.remove('border-brand-gold', 'bg-stone-50', 'border-2');
+        b.classList.add('border-stone-200');
+      });
+      if (window.event && window.event.currentTarget) {
+        window.event.currentTarget.classList.add('border-brand-gold', 'bg-stone-50', 'border-2');
+        window.event.currentTarget.classList.remove('border-stone-200');
+      }
+      updateCalculation();
+    }
+
+    function handleSizeChange(val) {
+      const costs = { '8x10': 450, '12x16': 750, '16x20': 1150, '20x24': 1650, '24x36': 2450 };
+      customState.size = val;
+      customState.basePrice = costs[val] || 750;
+      const dimLabel = document.getElementById('dimensionLabel');
+      if (dimLabel) dimLabel.innerText = val.replace('x', '" × ') + '"';
+      updateCalculation();
+    }
+
+    function handleGlassChange(type, cost) {
+      customState.glass = type;
+      customState.glassCost = cost;
+      const glare = document.getElementById('glassGlare');
+      if (glare) glare.style.opacity = type === 'museum' ? '0.05' : '0.7';
+      updateCalculation();
+    }
+
+    function setWallColor(color) {
+      const wall = document.getElementById('virtualWall');
+      if (wall) wall.style.backgroundColor = color;
+    }
+
+    function handleUserPhotoUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          customState.image = e.target.result;
+          const preview = document.getElementById('customPreviewImage');
+          if (preview) preview.src = e.target.result;
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function setSamplePhoto() {
+      const sample = "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80";
+      customState.image = sample;
+      const preview = document.getElementById('customPreviewImage');
+      if (preview) preview.src = sample;
+    }
+
+    function handlePitchImageUpload(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          const hiddenInput = document.getElementById('pitchImageBase64');
+          if (hiddenInput) hiddenInput.value = evt.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function submitUniqueConcept(e) {
+      e.preventDefault();
+      const name = document.getElementById('pitchName')?.value.trim() || "Anonymous";
+      const phone = document.getElementById('pitchPhone')?.value.trim() || "Not provided";
+      const email = document.getElementById('pitchEmail')?.value.trim() || "Not provided";
+      const budget = document.getElementById('pitchBudget')?.value.trim() || "Not specified";
+      const idea = document.getElementById('pitchIdeaText')?.value.trim() || "";
+      const refImg = document.getElementById('pitchImageBase64')?.value || "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=300&q=80";
+
+      const pitchId = `IDEA-${Math.floor(100 + Math.random() * 900)}`;
+      const newPitch = {
+        id: pitchId,
+        date: "Just Now",
+        clientName: name,
+        clientPhone: phone,
+        clientEmail: email,
+        idea: idea,
+        dimensions: budget,
+        budget: budget,
+        refImage: refImg,
+        status: "New Concept / Awaiting Owner Quote"
+      };
+
+      uniqueFramePitches.unshift(newPitch);
+      alert(`🌟 Concept #${pitchId} Submitted Successfully!`);
+      e.target.reset();
+      const hiddenInput = document.getElementById('pitchImageBase64');
+      if (hiddenInput) hiddenInput.value = "";
+      renderOwnerTables();
+    }
+
+    async function handleSendRealSupabaseMagicLink(e) {
+      e.preventDefault();
+      const emailInput = document.getElementById('authEmailInput');
+      if (!emailInput) return;
+      const email = emailInput.value.trim();
+      const submitBtn = document.getElementById('sendOtpSubmitBtn');
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.innerText = "Sending Confirmation Link..."; }
+
+      try {
+        if (!supabaseClient) throw new Error("Supabase client not initialized.");
+        const currentUrl = window.location.origin + window.location.pathname;
+        const { data, error } = await supabaseClient.auth.signInWithOtp({
+          email: email,
+          options: { emailRedirectTo: currentUrl, shouldCreateUser: true }
+        });
+        if (error) throw error;
+        const displayEmail = document.getElementById('displayTargetEmail');
+        if (displayEmail) displayEmail.innerText = email;
+        const emailStep = document.getElementById('authStepEmail');
+        if (emailStep) emailStep.classList.add('hidden');
+        const sentStep = document.getElementById('authStepSent');
+        if (sentStep) sentStep.classList.remove('hidden');
+      } catch (err) {
+        alert(`⚠️ Supabase Notice: ${err.message || 'Error sending confirmation email'}`);
+      } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerText = "Send Confirmation Link to My Email"; }
+      }
+    }
+
+    function handleResendMagicLink() {
+      const email = document.getElementById('authEmailInput')?.value.trim();
+      if (email && supabaseClient) {
+        supabaseClient.auth.signInWithOtp({
+          email: email,
+          options: { emailRedirectTo: window.location.origin + window.location.pathname }
+        });
+        alert(`A new confirmation link has been sent to ${email}.`);
+      }
+    }
+
+    async function checkIncomingEmailConfirmation() {
+      if (!supabaseClient) return;
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (session && session.user) {
+        authenticatedUser = { email: session.user.email, verified: true, session: session };
+        updateAuthHeaderUI();
+        return;
+      }
+      supabaseClient.auth.onAuthStateChange((event, session) => {
+        if (event === 'SIGNED_IN' && session && session.user) {
+          authenticatedUser = { email: session.user.email, verified: true, session: session };
+          updateAuthHeaderUI();
+          closeAuthModal();
+          if (window.location.hash) {
+            window.history.replaceState(null, null, window.location.pathname + window.location.search);
+          }
+          alert(`🎉 Email Confirmed Successfully! Welcome, ${session.user.email}`);
+          if (pendingAction === 'submitCustomOrder') triggerCheckoutModal('custom');
+          else if (pendingAction === 'cartCheckout') triggerCheckoutModal('cart');
+        }
+      });
+    }
+
+    function openAuthModal(pendingIntent = null) {
+      pendingAction = pendingIntent;
+      const modal = document.getElementById('authModal');
+      if (modal) modal.classList.remove('hidden');
+      resetAuthFlow();
+    }
+
+    function closeAuthModal() {
+      const modal = document.getElementById('authModal');
+      if (modal) modal.classList.add('hidden');
+      pendingAction = null;
+    }
+
+    function resetAuthFlow() {
+      const emailStep = document.getElementById('authStepEmail');
+      if (emailStep) emailStep.classList.remove('hidden');
+      const sentStep = document.getElementById('authStepSent');
+      if (sentStep) sentStep.classList.add('hidden');
+    }
+
+    function signOutUser() {
+      if (supabaseClient) supabaseClient.auth.signOut();
+      authenticatedUser = null;
+      updateAuthHeaderUI();
+      alert("You have signed out.");
+    }
+
+    function updateAuthHeaderUI() {
+      const container = document.getElementById('authHeaderContainer');
+      if (!container) return;
+      if (authenticatedUser) {
+        container.innerHTML = `
+          <div class="flex items-center gap-2 bg-stone-100 px-3 py-1.5 rounded-lg border border-stone-200">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span class="text-xs font-semibold text-brand-dark">${authenticatedUser.email.split('@')[0]}</span>
+            <span class="text-[10px] text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded font-bold">Verified</span>
+            <button onclick="signOutUser()" class="text-[10px] text-stone-400 hover:text-red-500 ml-1 font-semibold" title="Sign out">✕</button>
+          </div>
+        `;
+      } else {
+        container.innerHTML = `
+          <button onclick="openAuthModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-stone-300 hover:border-brand-gold text-brand-dark bg-white transition-all">
+            <i data-lucide="mail" class="w-3.5 h-3.5 text-brand-gold"></i>
+            <span>Customer Login</span>
+          </button>
+        `;
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function handleCustomOrderClick() {
+      if (!authenticatedUser) {
+        alert("🔒 Please confirm your Gmail first.");
+        openAuthModal('submitCustomOrder');
+      } else {
+        triggerCheckoutModal('custom');
+      }
+    }
+
+    function startCheckoutFromCart() {
+      if (cart.length === 0) { alert("Your cart is empty!"); return; }
+      if (!authenticatedUser) {
+        alert("🔒 Please confirm your Gmail first.");
+        openAuthModal('cartCheckout');
+      } else {
+        toggleCart(false);
+        triggerCheckoutModal('cart');
+      }
+    }
+
+    function triggerCheckoutModal(type) {
+      if (type === 'custom') {
+        const total = customState.basePrice + customState.mouldingCost + (customState.matWidth * 75) + customState.glassCost;
+        currentCheckoutContext = {
+          type: 'custom',
+          title: `Custom Frame (${customState.size}" ${customState.mouldingName})`,
+          price: total,
+          photo: customState.image,
+          specs: `${customState.size}" • ${customState.mouldingName} • ${customState.matWidth}" Mat • ${customState.glass === 'museum' ? 'Museum Glass' : 'Clear Acrylic'}`
+        };
+      } else {
+        const total = cart.reduce((acc, item) => acc + item.price, 0);
+        currentCheckoutContext = {
+          type: 'cart',
+          title: `${cart.length} Ready-Made Frame(s)`,
+          price: total,
+          photo: cart[0]?.image || '',
+          specs: cart.map(i => `${i.title} (${i.size})`).join(', ')
+        };
+      }
+
+      document.getElementById('checkoutItemDescription').innerText = currentCheckoutContext.title;
+      document.getElementById('checkoutUserEmail').innerText = authenticatedUser?.email || "verified@customer.com";
+      document.getElementById('checkoutTotalAmount').innerText = `₹${currentCheckoutContext.price.toLocaleString('en-IN')}`;
+      document.getElementById('submitOrderBtnText').innerText = `Confirm & Pay Online (₹${currentCheckoutContext.price.toLocaleString('en-IN')})`;
+      
+      toggleFulfillmentMode('delivery');
+      syncOwnerPaymentUI();
+
+      const checkoutModal = document.getElementById('checkoutModal');
+      if (checkoutModal) checkoutModal.classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function closeCheckoutModal() {
+      const modal = document.getElementById('checkoutModal');
+      if (modal) modal.classList.add('hidden');
+      currentCheckoutContext = null;
+    }
+
+    function toggleFulfillmentMode(mode) {
+      const addressSec = document.getElementById('deliveryAddressSection');
+      const addressInput = document.getElementById('deliveryAddressInput');
+      const payAtShopOpt = document.getElementById('payAtShopOption');
+      const delLabel = document.getElementById('labelPrepaidDelivery');
+      const picLabel = document.getElementById('labelStorePickup');
+      const submitBtnText = document.getElementById('submitOrderBtnText');
+
+      if (mode === 'delivery') {
+        if (addressSec) addressSec.classList.remove('hidden');
+        if (addressInput) addressInput.required = true;
+        if (payAtShopOpt) payAtShopOpt.classList.add('hidden');
+        if (delLabel) delLabel.className = "border-2 border-brand-gold p-3 rounded-xl cursor-pointer bg-brand-cream/40 flex flex-col justify-between";
+        if (picLabel) picLabel.className = "border border-stone-200 p-3 rounded-xl cursor-pointer hover:bg-stone-50 flex flex-col justify-between";
+        const prepaidRadio = document.querySelector('input[name="paymentMethod"][value="online_prepaid"]');
+        if (prepaidRadio) prepaidRadio.checked = true;
+        if (submitBtnText) submitBtnText.innerText = `Confirm & Pay Online (₹${currentCheckoutContext ? currentCheckoutContext.price.toLocaleString('en-IN') : ''})`;
+      } else {
+        if (addressSec) addressSec.classList.add('hidden');
+        if (addressInput) addressInput.required = false;
+        if (payAtShopOpt) payAtShopOpt.classList.remove('hidden');
+        if (picLabel) picLabel.className = "border-2 border-brand-gold p-3 rounded-xl cursor-pointer bg-brand-cream/40 flex flex-col justify-between";
+        if (delLabel) delLabel.className = "border border-stone-200 p-3 rounded-xl cursor-pointer hover:bg-stone-50 flex flex-col justify-between";
+        if (submitBtnText) submitBtnText.innerText = `Confirm In-Store Pickup Order (₹${currentCheckoutContext ? currentCheckoutContext.price.toLocaleString('en-IN') : ''})`;
+      }
+    }
+
+    function handleFinalOrderSubmission(e) {
+      e.preventDefault();
+      const name = document.getElementById('custFullName')?.value || "Customer";
+      const phone = document.getElementById('custPhone')?.value || "";
+      const fulfillment = document.querySelector('input[name="fulfillmentType"]:checked')?.value || "delivery";
+      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value || "online_prepaid";
+      const address = document.getElementById('deliveryAddressInput')?.value || "";
+
+      let fulfillmentText = fulfillment === 'delivery' ? `Prepaid Doorstep Delivery to: ${address}` : `Store Pickup (Front of Ganesh Mandir, Chola Naka)`;
+      let paymentText = paymentMethod === 'online_prepaid' ? `Online Prepayment (Paid via UPI to ${shopPaymentConfig.upiId})` : "Pay at Shop on Collection";
+
+      const orderId = `CM-${Math.floor(1000 + Math.random() * 9000)}`;
+      const newOrderRecord = {
+        id: orderId,
+        date: "Just Now",
+        customerName: name,
+        customerEmail: authenticatedUser?.email || "guest@gmail.com",
+        customerPhone: phone,
+        photo: currentCheckoutContext?.photo || "",
+        size: currentCheckoutContext?.type === 'custom' ? customState.size : "Ready-Made",
+        itemSummary: currentCheckoutContext?.specs || "Picture frame",
+        fulfillment: `${fulfillmentText} • [${paymentText}]`,
+        price: currentCheckoutContext?.price || 0,
+        status: paymentMethod === 'online_prepaid' ? "Prepaid / Order Confirmed" : "Pickup Reserved"
+      };
+
+      customOrders.unshift(newOrderRecord);
+      if (currentCheckoutContext?.type === 'cart') { cart = []; updateCartUI(); }
+      closeCheckoutModal();
+      renderOwnerTables();
+      alert(`🎉 SUCCESS! Order #${orderId} Confirmed!\n\nCustomer: ${name} (${authenticatedUser?.email})\nAmount: ₹${newOrderRecord.price}\nPayment Method:${paymentText}`);
+    }
+
+    function addToCart(productId) {
+      const product = readyMadeProducts.find(p => p.id === productId);
+      if (product) { cart.push(product); updateCartUI(); toggleCart(true); }
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const badge = document.getElementById('cartBadge');
+      if (badge) badge.innerText = cart.length;
+      const list = document.getElementById('cartItemsList');
+      if (!list) return;
+      list.innerHTML = '';
+
+      if (cart.length === 0) {
+        list.innerHTML = `<div class="text-center py-10 text-stone-400"><i data-lucide="shopping-bag" class="w-10 h-10 mx-auto mb-2 opacity-40"></i><p class="text-sm font-medium">Your cart is empty.</p></div>`;
+      } else {
+        cart.forEach((item, index) => {
+          const div = document.createElement('div');
+          div.className = "pt-3 flex gap-3 items-center justify-between";
+          div.innerHTML = `
+            <div class="flex items-center gap-3">
+              <img src="${item.image}" class="w-12 h-12 object-cover rounded border border-stone-200">
+              <div><h5 class="font-serif font-bold text-xs text-brand-dark">${item.title}</h5><p class="text-[10px] text-stone-500">${item.size} •${item.moulding}</p><p class="text-xs font-bold text-brand-dark mt-0.5">₹${item.price.toLocaleString('en-IN')}</p></div>
+            </div>
+            <button onclick="removeFromCart(${index})" class="text-stone-400 hover:text-red-500"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+          `;
+          list.appendChild(div);
+        });
+      }
+
+      const total = cart.reduce((acc, item) => acc + item.price, 0);
+      const cartTotalEl = document.getElementById('cartTotalDisplay');
+      if (cartTotalEl) cartTotalEl.innerText = `₹${total.toLocaleString('en-IN')}`;
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function toggleCart(forceOpen = false) {
+      const drawer = document.getElementById('cartDrawer');
+      if (!drawer) return;
+      if (forceOpen) drawer.classList.remove('hidden');
+      else drawer.classList.toggle('hidden');
+    }
+
+    function renderProducts(category = 'All') {
+      const grid = document.getElementById('productsGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      const filtered = category === 'All' ? readyMadeProducts : readyMadeProducts.filter(p => p.category === category);
+
+      filtered.forEach(p => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group";
+        card.innerHTML = `
+          <div class="relative overflow-hidden bg-stone-100 aspect-[4/5] p-6 flex items-center justify-center">
+            <div class="p-3 bg-white frame-shadow border-8 ${getMouldingClassByName(p.moulding)} transition-transform duration-500 group-hover:scale-105">
+              <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover max-h-56">
+            </div>
+            <span class="absolute top-3 left-3 bg-brand-dark/80 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-1 rounded">${p.category}</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div><h4 class="font-serif text-lg font-bold text-brand-dark">${p.title}</h4><p class="text-xs text-stone-500 mt-1">${p.size} •${p.moulding}</p></div>
+            <div class="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between">
+              <div><span class="text-[10px] text-stone-400 uppercase">Price</span><p class="font-serif text-xl font-bold text-brand-dark">₹${p.price.toLocaleString('en-IN')}</p></div>
+              <button onclick="addToCart(${p.id})" class="px-3.5 py-2 bg-brand-dark hover:bg-brand-gold hover:text-brand-dark text-white rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5"><i data-lucide="plus" class="w-3.5 h-3.5"></i> Add to Cart</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function getMouldingClassByName(name) {
+      if (name.includes("Gold")) return "moulding-gold";
+      if (name.includes("Teak")) return "moulding-teak";
+      if (name.includes("Black")) return "moulding-black";
+      return "moulding-silver";
+    }
+
+    function filterProducts(cat) {
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        if (btn.innerText.includes(cat) || (cat === 'All' && btn.innerText === 'All')) {
+          btn.className = "category-btn active px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-dark text-white";
+        } else {
+          btn.className = "category-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-stone-200 text-brand-dark hover:bg-stone-300";
+        }
+      });
+      renderProducts(cat);
+    }
+
+    function renderOwnerTables() {
+      const ideasBody = document.getElementById('uniqueIdeasTableBody');
+      if (ideasBody) {
+        ideasBody.innerHTML = '';
+        uniqueFramePitches.forEach((idea, idx) => {
+          const tr = document.createElement('tr');
+          tr.className = "hover:bg-stone-50";
+          tr.innerHTML = `
+            <td class="py-3 px-4 font-semibold text-brand-dark">${idea.id}<br><span class="text-[10px] text-stone-400 font-normal">${idea.date}</span></td>
+            <td class="py-3 px-4"><span class="font-bold text-brand-dark">${idea.clientName}</span><br><span class="text-stone-500 text-[10px]">${idea.clientEmail}</span><br><span class="text-brand-gold text-[10px] font-bold">${idea.clientPhone}</span></td>
+            <td class="py-3 px-4 max-w-xs"><p class="text-stone-800 text-[11px] leading-relaxed line-clamp-3">${idea.idea}</p></td>
+            <td class="py-3 px-4"><img src="${idea.refImage}" class="w-12 h-12 object-cover rounded border border-stone-200"></td>
+            <td class="py-3 px-4"><span class="text-stone-700 text-xs font-semibold">${idea.budget}</span></td>
+            <td class="py-3 px-4"><span class="px-2 py-0.5 text-[10px] font-bold rounded-full ${idea.status.includes('New') ? 'bg-amber-100 text-amber-800' : 'bg-emerald-100 text-emerald-800'}">${idea.status}</span></td>
+            <td class="py-3 px-4 text-right"><button onclick="respondToPitch(${idx})" class="px-2.5 py-1 bg-brand-dark hover:bg-brand-gold text-white text-[11px] font-bold rounded">Set Custom Quote</button></td>
+          `;
+          ideasBody.appendChild(tr);
+        });
+      }
+
+      const orderBody = document.getElementById('customOrdersTableBody');
+      if (orderBody) {
+        orderBody.innerHTML = '';
+        customOrders.forEach((o, idx) => {
+          const tr = document.createElement('tr');
+          tr.className = "hover:bg-stone-50";
+          tr.innerHTML = `
+            <td class="py-3 px-4 font-semibold text-brand-dark">${o.id}<br><span class="text-[10px] text-stone-400 font-normal">${o.date}</span></td>
+            <td class="py-3 px-4"><span class="font-bold text-brand-dark">${o.customerName}</span><br><span class="text-stone-500 text-[10px]">${o.customerEmail}</span><br><span class="text-stone-400 text-[10px]">${o.customerPhone}</span></td>
+            <td class="py-3 px-4"><img src="${o.photo}" class="w-10 h-10 object-cover rounded border border-stone-200"></td>
+            <td class="py-3 px-4"><div class="text-[11px] leading-tight text-stone-700">${o.itemSummary}</div></td>
+            <td class="py-3 px-4"><span class="text-[11px] font-semibold text-brand-dark block">${o.fulfillment}</span></td>
+            <td class="py-3 px-4"><span class="font-bold text-brand-dark text-xs">₹${o.price.toLocaleString('en-IN')}</span></td>
+            <td class="py-3 px-4"><span class="px-2 py-0.5 text-[10px] font-bold rounded-full ${o.status.includes('Confirmed') \vert{}\vert{} o.status.includes('Payment') ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">${o.status}</span></td>
+            <td class="py-3 px-4 text-right"><button onclick="approveCustomOrder(${idx})" class="px-2.5 py-1 bg-brand-dark hover:bg-brand-gold text-white text-[11px] font-bold rounded">Update Status</button></td>
+          `;
+          orderBody.appendChild(tr);
+        });
+      }
+
+      const invBody = document.getElementById('inventoryTableBody');
+      if (invBody) {
+        invBody.innerHTML = '';
+        readyMadeProducts.forEach((p, idx) => {
+          const tr = document.createElement('tr');
+          tr.className = "hover:bg-stone-50";
+          tr.innerHTML = `
+            <td class="py-3 px-4 font-semibold text-brand-dark flex items-center gap-2"><img src="${p.image}" class="w-8 h-8 object-cover rounded"><span>${p.title}</span></td>
+            <td class="py-3 px-4 text-stone-500">${p.category}</td>
+            <td class="py-3 px-4 text-stone-500">${p.moulding}</td>
+            <td class="py-3 px-4 text-stone-500">${p.size}</td>
+            <td class="py-3 px-4 font-bold text-brand-dark">₹${p.price.toLocaleString('en-IN')}</td>
+            <td class="py-3 px-4 text-right"><button onclick="deleteProduct(${idx})" class="text-red-500 hover:text-red-700"><i data-lucide="trash-2" class="w-4 h-4"></i></button></td>
+          `;
+          invBody.appendChild(tr);
+        });
+      }
+
+      const uniqueIdeasCountEl = document.getElementById('ownerUniqueIdeasCount');
+      if (uniqueIdeasCountEl) uniqueIdeasCountEl.innerText = uniqueFramePitches.length;
+      const pendingOrdersCountEl = document.getElementById('ownerPendingOrdersCount');
+      if (pendingOrdersCountEl) pendingOrdersCountEl.innerText = customOrders.length;
+      const stockCountEl = document.getElementById('ownerStockCount');
+      if (stockCountEl) stockCountEl.innerText = readyMadeProducts.length;
+      const totalOrdersCountEl = document.getElementById('ownerTotalOrdersCount');
+      if (totalOrdersCountEl) totalOrdersCountEl.innerText = customOrders.length;
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function respondToPitch(index) {
+      const quote = prompt(`Enter custom quotation price for ${uniqueFramePitches[index].clientName}'s idea:`, "₹4,200");
+      if (quote) {
+        uniqueFramePitches[index].status = `Quote Sent: ${quote}`;
+        renderOwnerTables();
+        alert(`Status updated! Quote ${quote} recorded.`);
+      }
+    }
+
+    function approveCustomOrder(index) {
+      const newStatus = prompt("Enter new status:", "Ready for Pickup at Chola Naka");
+      if (newStatus) { customOrders[index].status = newStatus; renderOwnerTables(); }
+    }
+
+    function deleteProduct(index) {
+      if (confirm("Are you sure you want to remove this frame from the store?")) {
+        readyMadeProducts.splice(index, 1);
+        renderProducts();
+        renderOwnerTables();
+      }
+    }
+
+    function openNewFrameModal() { document.getElementById('newFrameModal').classList.remove('hidden'); }
+    function closeNewFrameModal() { document.getElementById('newFrameModal').classList.add('hidden'); }
+
+    function handleAddNewFrame(e) {
+      e.preventDefault();
+      const newP = {
+        id: Date.now(),
+        title: document.getElementById('newTitle')?.value || "Untitled Frame",
+        category: document.getElementById('newCategory')?.value || "Modern",
+        moulding: document.getElementById('newMoulding')?.value || "Standard Wood",
+        size: document.getElementById('newDimensions')?.value || "12x16",
+        price: parseInt(document.getElementById('newPrice')?.value || "999"),
+        image: document.getElementById('newImageUrl')?.value || "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
+      };
+      readyMadeProducts.unshift(newP);
+      closeNewFrameModal();
+      renderProducts();
+      renderOwnerTables();
+      alert("New frame added successfully to Chetan modern photoframe store!");
+    }
+
+    function init3DHero() {
+      const container = document.getElementById('threeHeroCanvas');
+      if (!container) return;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+      camera.position.set(0, 0, 10);
+
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
+
+      const ambientLight = new THREE.AmbientLight(0xfff8ee, 1.2);
+      scene.add(ambientLight);
+
+      const goldDirectional = new THREE.DirectionalLight(0xE2B873, 2.0);
+      goldDirectional.position.set(5, 5, 5);
+      scene.add(goldDirectional);
+
+      const softBackLight = new THREE.PointLight(0xffffff, 0.8);
+      softBackLight.position.set(-5, -3, 2);
+      scene.add(softBackLight);
+
+      const framesGroup = new THREE.Group();
+      scene.add(framesGroup);
+
+      function createFrameMesh(w, h, depth, border, gold = true) {
+        const frameG = new THREE.Group();
+        const frameMat = new THREE.MeshStandardMaterial({
+          color: gold ? 0xC59A53 : 0x533318,
+          metalness: gold ? 0.75 : 0.15,
+          roughness: gold ? 0.3 : 0.6
+        });
+
+        const topGeo = new THREE.BoxGeometry(w, border, depth);
+        const top = new THREE.Mesh(topGeo, frameMat);
+        top.position.y = (h / 2) - (border / 2);
+        frameG.add(top);
+
+        const btm = new THREE.Mesh(topGeo, frameMat);
+        btm.position.y = - (h / 2) + (border / 2);
+        frameG.add(btm);
+
+        const sideGeo = new THREE.BoxGeometry(border, h - 2 * border, depth);
+        const left = new THREE.Mesh(sideGeo, frameMat);
+        left.position.x = - (w / 2) + (border / 2);
+        frameG.add(left);
+
+        const right = new THREE.Mesh(sideGeo, frameMat);
+        right.position.x = (w / 2) - (border / 2);
+        frameG.add(right);
+
+        const artGeo = new THREE.PlaneGeometry(w - border * 2, h - border * 2);
+        const artMat = new THREE.MeshStandardMaterial({
+          color: gold ? 0xfffcf7 : 0xe8e4de,
+          roughness: 0.8
+        });
+        const art = new THREE.Mesh(artGeo, artMat);
+        art.position.z = -depth / 4;
+        frameG.add(art);
+
+        return frameG;
+      }
+
+      const centerFrame = createFrameMesh(3.4, 4.4, 0.25, 0.25, true);
+      centerFrame.position.set(0, 0.3, 0);
+      framesGroup.add(centerFrame);
+
+      const leftFrame = createFrameMesh(2.2, 3.0, 0.2, 0.18, false);
+      leftFrame.position.set(-3.6, -0.6, -1.5);
+      leftFrame.rotation.y = 0.35;
+      leftFrame.rotation.z = -0.05;
+      framesGroup.add(leftFrame);
+
+      const rightFrame = createFrameMesh(2.4, 3.2, 0.2, 0.18, true);
+      rightFrame.position.set(3.6, 0.6, -1.2);
+      rightFrame.rotation.y = -0.35;
+      rightFrame.rotation.z = 0.05;
+      framesGroup.add(rightFrame);
+
+      const creatures = [];
+      const numCreatures = 4;
+
+      function createButterfly() {
+        const bGroup = new THREE.Group();
+        const wingMat = new THREE.MeshStandardMaterial({
+          color: 0xE2B873,
+          metalness: 0.8,
+          roughness: 0.2,
+          side: THREE.DoubleSide
+        });
+
+        const leftWingGeo = new THREE.BufferGeometry();
+        const verticesLeft = new Float32Array([0, 0, 0, -0.5, 0.5, 0, -0.4, -0.4, 0]);
+        leftWingGeo.setAttribute('position', new THREE.BufferAttribute(verticesLeft, 3));
+        const leftWing = new THREE.Mesh(leftWingGeo, wingMat);
+
+        const rightWingGeo = new THREE.BufferGeometry();
+        const verticesRight = new Float32Array([0, 0, 0, 0.5, 0.5, 0, 0.4, -0.4, 0]);
+        rightWingGeo.setAttribute('position', new THREE.BufferAttribute(verticesRight, 3));
+        const rightWing = new THREE.Mesh(rightWingGeo, wingMat);
+
+        bGroup.add(leftWing);
+        bGroup.add(rightWing);
+        bGroup.scale.set(0.7, 0.7, 0.7);
+
+        return {
+          mesh: bGroup,
+          leftWing: leftWing,
+          rightWing: rightWing,
+          phase: Math.random() * Math.PI * 2,
+          speed: 0.015 + Math.random() * 0.015,
+          radiusX: 2.5 + Math.random() * 2.0,
+          radiusY: 1.2 + Math.random() * 1.5,
+          offsetY: (Math.random() - 0.5) * 2
+        };
+      }
+
+      for (let i = 0; i < numCreatures; i++) {
+        const c = createButterfly();
+        scene.add(c.mesh);
+        creatures.push(c);
+      }
+
+      let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+        mouseY = -(e.clientY / window.innerHeight - 0.5) * 2;
+      });
+
+      window.addEventListener('resize', () => {
+        if (!container) return;
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
+
+      const clock = new THREE.Clock();
+
+      function animate() {
+        requestAnimationFrame(animate);
+        const elapsedTime = clock.getElapsedTime();
+
+        targetX += (mouseX - targetX) * 0.05;
+        targetY += (mouseY - targetY) * 0.05;
+
+        framesGroup.rotation.y = targetX * 0.25;
+        framesGroup.rotation.x = -targetY * 0.15;
+        centerFrame.position.y = 0.3 + Math.sin(elapsedTime * 1.5) * 0.1;
+        leftFrame.position.y = -0.6 + Math.cos(elapsedTime * 1.2) * 0.08;
+        rightFrame.position.y = 0.6 + Math.sin(elapsedTime * 1.4 + 1) * 0.08;
+
+        creatures.forEach((c, index) => {
+          const t = elapsedTime * 1.5 + c.phase;
+          c.mesh.position.x = Math.sin(t) * c.radiusX + (targetX * 1.5);
+          c.mesh.position.y = Math.cos(t * 0.8) * c.radiusY + c.offsetY;
+          c.mesh.position.z = Math.cos(t) * 1.5 + 1.2;
+          c.mesh.rotation.y = Math.atan2(Math.cos(t), -Math.sin(t));
+          c.mesh.rotation.z = Math.sin(t * 2) * 0.2;
+          const flap = Math.sin(elapsedTime * 18 + index) * 0.75;
+          c.leftWing.rotation.y = flap;
+          c.rightWing.rotation.y = -flap;
+        });
+
+        renderer.render(scene, camera);
+      }
+      animate();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts();
+      init3DHero();
+      updateCalculation();
+      updateAuthHeaderUI();
+      renderOwnerTables();
+      syncOwnerPaymentUI();
+      checkIncomingEmailConfirmation();
+      if (window.lucide) lucide.createIcons();
+    });
+  <\/script>
+</body>
+</html>`;
+
+    document.getElementById('dlBtn').addEventListener('click', () => {
+      const blob = new Blob([fullCode], { type: 'text/html;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'index.html';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(link.href);
+    });
+  </script>
+</body>
+</html>
