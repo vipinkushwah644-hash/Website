@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download index.html</title>
+  <title>Download index.html with Email + Password Auth</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-stone-50 p-6 flex flex-col items-center justify-center min-h-[220px]">
   <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm max-w-md w-full text-center">
-    <h3 class="font-bold text-stone-800 text-lg mb-1">Chetan Modern Photoframe</h3>
-    <p class="text-xs text-stone-500 mb-4">Click below to download your complete, launch-ready website file.</p>
+    <h3 class="font-bold text-stone-800 text-lg mb-1">Chetan modern photoframe</h3>
+    <p class="text-xs text-stone-500 mb-4">Complete package with Email + Password login, Sign Up verification, Forgot Password flow, UPI/QR engine, and 3D Showcase.</p>
     <button id="dlBtn" class="w-full py-3 bg-[#141210] hover:bg-[#C59A53] hover:text-[#141210] text-white font-bold rounded-lg transition-colors text-sm shadow-md">
-      ⬇️ Download index.html
+      ⬇️ Download Updated index.html
     </button>
   </div>
 
@@ -79,6 +79,7 @@
 </head>
 <body class="relative custom-scrollbar">
 
+  <!-- TOP BANNER & ROLE SWITCHER -->
   <div class="bg-brand-dark text-stone-300 text-xs py-2 px-4 border-b border-stone-800">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
       <div class="flex items-center gap-2">
@@ -98,6 +99,7 @@
     </div>
   </div>
 
+  <!-- NAVIGATION HEADER -->
   <header class="sticky top-0 z-40 bg-brand-ivory/90 backdrop-blur-md border-b border-stone-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="#home" class="flex flex-col">
@@ -120,9 +122,9 @@
 
       <div class="flex items-center space-x-3">
         <div id="authHeaderContainer">
-          <button onclick="openAuthModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-stone-300 hover:border-brand-gold text-brand-dark bg-white transition-all">
-            <i data-lucide="mail" class="w-3.5 h-3.5 text-brand-gold"></i>
-            <span>Customer Login</span>
+          <button onclick="openAuthModal('login')" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-stone-300 hover:border-brand-gold text-brand-dark bg-white transition-all">
+            <i data-lucide="user" class="w-3.5 h-3.5 text-brand-gold"></i>
+            <span>Login / Sign Up</span>
           </button>
         </div>
 
@@ -134,7 +136,9 @@
     </div>
   </header>
 
+  <!-- 1. CUSTOMER VIEW -->
   <div id="customerSection">
+    
     <section id="home" class="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-b from-brand-ivory via-brand-cream/60 to-brand-ivory overflow-hidden border-b border-stone-200">
       <div id="threeHeroCanvas" class="absolute inset-0 w-full h-full pointer-events-auto cursor-grab active:cursor-grabbing"></div>
 
@@ -395,6 +399,7 @@
     </section>
   </div>
 
+  <!-- 2. OWNER / ADMIN PORTAL (PASSWORD LOCKED: 9977234854) -->
   <div id="ownerSection" class="hidden min-h-screen bg-stone-100 py-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -506,193 +511,96 @@
     </div>
   </div>
 
+  <!-- AUTH MODAL WITH LOGIN / SIGN UP / FORGOT PASSWORD FLOWS -->
   <div id="authModal" class="fixed inset-0 z-50 overflow-y-auto hidden">
     <div class="flex items-center justify-center min-h-screen px-4 py-6">
       <div class="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity" onclick="closeAuthModal()"></div>
       <div class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 sm:p-8 z-10 border border-stone-200">
         <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-700"><i data-lucide="x" class="w-5 h-5"></i></button>
 
-        <div id="authStepEmail">
+        <!-- Tabs: Login vs Sign Up -->
+        <div id="authTabsContainer" class="flex border-b border-stone-200 mb-6">
+          <button id="tabLoginBtn" onclick="switchAuthTab('login')" class="flex-1 pb-3 text-xs font-bold uppercase tracking-wider text-brand-dark border-b-2 border-brand-gold transition-colors">
+            Log In
+          </button>
+          <button id="tabSignupBtn" onclick="switchAuthTab('signup')" class="flex-1 pb-3 text-xs font-bold uppercase tracking-wider text-stone-400 border-b-2 border-transparent hover:text-brand-dark transition-colors">
+            Create Account (Sign Up)
+          </button>
+        </div>
+
+        <!-- Primary Form Container -->
+        <div id="authFormView">
           <div class="text-center mb-6">
-            <div class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-3 border border-emerald-100">
-              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <div class="w-12 h-12 rounded-full bg-amber-50 text-brand-gold flex items-center justify-center mx-auto mb-3 border border-amber-100">
+              <i id="authModalIcon" data-lucide="lock" class="w-6 h-6"></i>
             </div>
-            <h3 class="font-serif text-2xl font-bold text-brand-dark">Customer Email Verification</h3>
-            <p class="text-xs text-stone-500 mt-1">We will email you a secure confirmation link. Just click the link to confirm instantly!</p>
+            <h3 id="authModalHeading" class="font-serif text-2xl font-bold text-brand-dark">Customer Login</h3>
+            <p id="authModalSubheading" class="text-xs text-stone-500 mt-1">Enter your Gmail and password to continue.</p>
           </div>
-          <form onsubmit="handleSendRealSupabaseMagicLink(event)" class="space-y-4">
+
+          <form onsubmit="handleCustomerAuthSubmit(event)" class="space-y-4">
+            <!-- Sign Up Extra Fields -->
+            <div id="signupFieldsContainer" class="hidden space-y-4">
+              <div>
+                <label class="block text-xs font-semibold text-brand-dark mb-1">Full Name *</label>
+                <input type="text" id="signupFullNameInput" placeholder="e.g. Vikram Sharma" class="w-full text-xs p-3 border border-stone-300 rounded-lg focus:outline-none focus:border-brand-gold">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-brand-dark mb-1">Mobile Number (For Delivery & Order Alerts) *</label>
+                <input type="tel" id="signupPhoneInput" placeholder="e.g. +91 98930 11223" class="w-full text-xs p-3 border border-stone-300 rounded-lg focus:outline-none focus:border-brand-gold">
+              </div>
+            </div>
+
+            <!-- Email -->
             <div>
-              <label class="block text-xs font-semibold text-brand-dark mb-1">Your Real Gmail Address</label>
+              <label class="block text-xs font-semibold text-brand-dark mb-1">Your Real Gmail Address *</label>
               <input type="email" id="authEmailInput" required placeholder="e.g. yourname@gmail.com" class="w-full text-xs p-3 border border-stone-300 rounded-lg focus:outline-none focus:border-brand-gold">
             </div>
-            <button type="submit" id="sendOtpSubmitBtn" class="w-full py-3 bg-brand-dark text-white rounded-lg text-xs font-bold hover:bg-brand-gold hover:text-brand-dark transition-colors flex items-center justify-center gap-2"><i data-lucide="send" class="w-4 h-4"></i><span>Send Confirmation Link to My Email</span></button>
+
+            <!-- Password -->
+            <div id="passwordFieldContainer">
+              <div class="flex justify-between items-center mb-1">
+                <label class="text-xs font-semibold text-brand-dark" id="authPasswordLabel">Password *</label>
+                <button type="button" id="forgotPasswordBtn" onclick="switchToForgotFlow()" class="text-[11px] text-brand-gold font-semibold hover:underline">Forgot Password?</button>
+              </div>
+              <input type="password" id="authPasswordInput" required placeholder="••••••••" class="w-full text-xs p-3 border border-stone-300 rounded-lg focus:outline-none focus:border-brand-gold">
+              <span id="passwordRequirements" class="hidden text-[10px] text-stone-400 mt-1 block">Must be at least 6 characters long.</span>
+            </div>
+
+            <button type="submit" id="authSubmitBtn" class="w-full py-3 bg-brand-dark text-white rounded-lg text-xs font-bold hover:bg-brand-gold hover:text-brand-dark transition-colors flex items-center justify-center gap-2">
+              <i data-lucide="log-in" class="w-4 h-4"></i>
+              <span id="authSubmitBtnText">Log In Now</span>
+            </button>
           </form>
-          <p class="text-[11px] text-stone-400 text-center mt-4">Secured by Supabase Auth.</p>
+
+          <p id="authDisclaimer" class="text-[11px] text-stone-400 text-center mt-4">
+            New users will receive a one-time verification link via Gmail to activate their account.
+          </p>
         </div>
 
+        <!-- Verification Sent Screen -->
         <div id="authStepSent" class="hidden text-center py-4 space-y-4">
-          <div class="w-16 h-16 rounded-full bg-amber-50 text-brand-gold flex items-center justify-center mx-auto border border-amber-200"><i data-lucide="mail-check" class="w-8 h-8"></i></div>
+          <div class="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-200">
+            <i data-lucide="mail-check" class="w-8 h-8"></i>
+          </div>
           <div>
-            <h3 class="font-serif text-xl font-bold text-brand-dark">Check Your Email!</h3>
-            <p class="text-xs text-stone-600 mt-2">We sent an instant sign-in link to: <br><strong id="displayTargetEmail" class="text-brand-dark text-sm">user@gmail.com</strong></p>
-            <p class="text-[11px] text-stone-500 mt-2 leading-relaxed">Open your inbox and click <strong>"Confirm Your Email"</strong> to be logged in automatically.</p>
+            <h3 class="font-serif text-xl font-bold text-brand-dark" id="sentStepHeading">Check Your Gmail!</h3>
+            <p class="text-xs text-stone-600 mt-2">
+              We sent a verification link to: <br>
+              <strong id="displayTargetEmail" class="text-brand-dark text-sm">user@gmail.com</strong>
+            </p>
+            <p class="text-[11px] text-stone-500 mt-2 leading-relaxed" id="sentStepMessage">
+              Open your inbox (or Spam/Promotions folder) and click <strong>"Confirm Your Email"</strong> to activate your new account.
+            </p>
           </div>
           <div class="pt-4 flex justify-center gap-3 text-xs">
-            <button type="button" onclick="handleResendMagicLink()" class="px-3 py-1.5 border border-stone-200 rounded-lg hover:bg-stone-50 font-medium">Resend Link</button>
-            <button type="button" onclick="resetAuthFlow()" class="px-3 py-1.5 border border-stone-200 rounded-lg hover:bg-stone-50 font-medium">Use Another Email</button>
+            <button type="button" onclick="switchAuthTab('login')" class="px-4 py-2 bg-brand-dark text-white rounded-lg hover:bg-brand-gold hover:text-brand-dark font-medium transition-colors">Back to Login</button>
           </div>
         </div>
+
       </div>
     </div>
   </div>
-
-  <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
-    <div class="absolute inset-0 bg-black/50 backdrop-blur-xs transition-opacity" onclick="toggleCart()"></div>
-    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
-      <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
-        <div class="p-6 bg-brand-ivory border-b border-stone-200 flex items-center justify-between">
-          <div class="flex items-center gap-2"><i data-lucide="shopping-bag" class="w-5 h-5 text-brand-gold"></i><h3 class="font-serif text-lg font-bold text-brand-dark">Your Order Cart</h3></div>
-          <button onclick="toggleCart()" class="text-stone-400 hover:text-brand-dark"><i data-lucide="x" class="w-5 h-5"></i></button>
-        </div>
-        <div id="cartItemsList" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-stone-100"></div>
-        <div class="p-6 bg-stone-50 border-t border-stone-200 space-y-4">
-          <div class="flex justify-between text-sm"><span class="text-stone-500">Workshop Location:</span><span class="font-semibold text-brand-dark">Chola Naka, Bhopal</span></div>
-          <div class="flex justify-between text-base font-bold"><span>Total Payable:</span><span id="cartTotalDisplay" class="font-serif text-xl text-brand-dark">₹0</span></div>
-          <button onclick="startCheckoutFromCart()" class="w-full py-3.5 bg-brand-dark text-white rounded-lg font-bold text-sm hover:bg-brand-gold hover:text-brand-dark transition-colors flex items-center justify-center gap-2 shadow-md"><i data-lucide="credit-card" class="w-4 h-4"></i><span>Proceed to Checkout</span></button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="checkoutModal" class="fixed inset-0 z-50 overflow-y-auto hidden">
-    <div class="flex items-center justify-center min-h-screen px-4 py-6">
-      <div class="fixed inset-0 bg-black/60 backdrop-blur-xs" onclick="closeCheckoutModal()"></div>
-      <div class="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 sm:p-8 z-10 border border-stone-200">
-        <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-700"><i data-lucide="x" class="w-5 h-5"></i></button>
-
-        <div class="text-center mb-6">
-          <span class="inline-block px-2.5 py-0.5 bg-brand-gold/10 text-brand-gold text-[10px] font-bold rounded mb-1 uppercase tracking-wider">Secure Online Checkout</span>
-          <h3 class="font-serif text-2xl font-bold text-brand-dark">Complete Your Order</h3>
-          <p class="text-xs text-stone-500 mt-1">Select your preferred delivery and payment method.</p>
-        </div>
-
-        <div class="bg-brand-ivory p-3.5 rounded-lg border border-stone-200 mb-6 flex justify-between items-center text-xs">
-          <div><span id="checkoutItemDescription" class="font-semibold text-brand-dark block truncate max-w-[240px]">Custom Framing Order</span><span id="checkoutUserEmail" class="text-[11px] text-stone-500">user@gmail.com</span></div>
-          <div class="text-right"><span class="text-[10px] uppercase text-stone-400 block font-medium">Payable Amount</span><span id="checkoutTotalAmount" class="font-serif text-xl font-bold text-brand-dark">₹1,100</span></div>
-        </div>
-
-        <form onsubmit="handleFinalOrderSubmission(event)" class="space-y-4 text-xs">
-          <div>
-            <label class="block font-bold text-brand-dark mb-1">Full Name & Mobile Number</label>
-            <div class="grid grid-cols-2 gap-2">
-              <input type="text" id="custFullName" required placeholder="Your Name" class="w-full p-2.5 border border-stone-300 rounded-lg">
-              <input type="tel" id="custPhone" required placeholder="10-digit Mobile" class="w-full p-2.5 border border-stone-300 rounded-lg">
-            </div>
-          </div>
-
-          <div>
-            <label class="block font-bold text-brand-dark mb-2">Select Fulfillment Option</label>
-            <div class="grid grid-cols-2 gap-3">
-              <label class="border-2 border-brand-gold p-3 rounded-xl cursor-pointer bg-brand-cream/40 flex flex-col justify-between" id="labelPrepaidDelivery">
-                <div class="flex items-center gap-2 mb-1"><input type="radio" name="fulfillmentType" value="delivery" checked onchange="toggleFulfillmentMode('delivery')" class="accent-brand-gold"><span class="font-bold text-brand-dark">Doorstep Delivery</span></div>
-                <span class="text-[10px] text-stone-500">Prepayment required before dispatch</span>
-              </label>
-              <label class="border border-stone-200 p-3 rounded-xl cursor-pointer hover:bg-stone-50 flex flex-col justify-between" id="labelStorePickup">
-                <div class="flex items-center gap-2 mb-1"><input type="radio" name="fulfillmentType" value="pickup" onchange="toggleFulfillmentMode('pickup')" class="accent-brand-gold"><span class="font-bold text-brand-dark">Pickup from Shop</span></div>
-                <span class="text-[10px] text-stone-500">Ganesh Mandir, Chola Naka, Bhopal</span>
-              </label>
-            </div>
-          </div>
-
-          <div id="deliveryAddressSection">
-            <label class="block font-bold text-brand-dark mb-1">Delivery Address (Bhopal & Nationwide)</label>
-            <textarea id="deliveryAddressInput" rows="2" placeholder="House/Flat No, Landmark, Area, Bhopal (Pincode)" class="w-full p-2.5 border border-stone-300 rounded-lg"></textarea>
-          </div>
-
-          <div>
-            <label class="block font-bold text-brand-dark mb-2">Payment Method</label>
-            <div id="paymentOptionsContainer" class="space-y-3">
-              <label class="flex flex-col p-3 border rounded-xl border-brand-gold bg-amber-50/40 cursor-pointer">
-                <div class="flex items-start gap-3">
-                  <input type="radio" name="paymentMethod" value="online_prepaid" checked class="mt-0.5 accent-brand-gold">
-                  <div class="flex-1">
-                    <span class="font-bold text-brand-dark block text-xs">Pay Online via UPI / QR (Instant)</span>
-                    <span class="text-[11px] text-stone-500">Scan QR Code or pay directly to the shop's verified UPI ID.</span>
-                  </div>
-                </div>
-                <div id="checkoutQrContainer" class="mt-3 pt-3 border-t border-amber-200/60 flex flex-col sm:flex-row items-center gap-4 bg-white p-3 rounded-lg border border-stone-200">
-                  <img id="checkoutQrImage" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=upi%3A%2F%2Fpay%3Fpa%3Dchetanframes%40upi%26pn%3DChetan%20modern%20photoframe" alt="Scan QR Code" class="w-28 h-28 object-contain border border-stone-200 rounded p-1 bg-white shadow-xs">
-                  <div class="text-left space-y-1">
-                    <span class="text-[10px] uppercase font-bold text-stone-400 block">Verified Shop UPI ID:</span>
-                    <span id="checkoutUpiIdLabel" class="font-mono text-xs font-bold text-brand-dark bg-stone-100 px-2 py-1 rounded inline-block">chetanframes@upi</span>
-                    <p class="text-[10px] text-stone-500">Scan with any UPI app (GPay, PhonePe, Paytm, BHIM).</p>
-                    <a id="checkoutUpiDirectLink" href="upi://pay?pa=chetanframes@upi&pn=Chetan%20modern%20photoframe" class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 hover:bg-emerald-100 transition-colors">
-                      <i data-lucide="smartphone" class="w-3 h-3"></i><span>Open in UPI App</span>
-                    </a>
-                  </div>
-                </div>
-              </label>
-
-              <label id="payAtShopOption" class="hidden flex items-start gap-3 p-3 border rounded-xl border-stone-200 cursor-pointer hover:bg-stone-50">
-                <input type="radio" name="paymentMethod" value="pay_at_shop" class="mt-0.5 accent-brand-gold">
-                <div>
-                  <span class="font-bold text-brand-dark block text-xs">Pay at Shop on Collection</span>
-                  <span class="text-[11px] text-stone-500">Pay via Cash or UPI when collecting your frame at Chola Naka.</span>
-                </div>
-              </label>
-            </div>
-          </div>
-
-          <div class="p-3 bg-stone-50 rounded-lg border border-stone-200">
-            <label class="flex items-start gap-2.5 cursor-pointer">
-              <input type="checkbox" id="unboxingVideoClause" required class="mt-0.5 accent-brand-gold">
-              <span class="text-[11px] text-stone-600 leading-tight">
-                <strong>I agree to the Replacement & Unboxing Policy:</strong> I understand that there are strictly NO refunds. Replacement will be granted only if an unboxing video is recorded at the time of opening the parcel showing any transit damage.
-              </span>
-            </label>
-          </div>
-
-          <button type="submit" class="w-full py-3.5 bg-brand-dark hover:bg-brand-gold hover:text-brand-dark text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2 text-sm tracking-wide shadow-md">
-            <i data-lucide="lock" class="w-4 h-4"></i><span id="submitOrderBtnText">Confirm & Pay Online (₹1,100)</span>
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div id="newFrameModal" class="fixed inset-0 z-50 overflow-y-auto hidden">
-    <div class="flex items-center justify-center min-h-screen px-4 py-6">
-      <div class="fixed inset-0 bg-black/50" onclick="closeNewFrameModal()"></div>
-      <div class="relative bg-white rounded-xl shadow-xl max-w-md w-full p-6 z-10">
-        <div class="flex justify-between items-center pb-3 border-b border-stone-100 mb-4">
-          <h4 class="font-serif text-lg font-bold text-brand-dark">Add New Ready-Made Frame</h4>
-          <button onclick="closeNewFrameModal()" class="text-stone-400 hover:text-stone-700"><i data-lucide="x" class="w-5 h-5"></i></button>
-        </div>
-        <form id="newFrameForm" onsubmit="handleAddNewFrame(event)" class="space-y-4 text-xs">
-          <div><label class="block font-semibold mb-1">Frame Title / Name</label><input type="text" id="newTitle" required placeholder="e.g. Golden Shree Ganesh Ji Mandala" class="w-full p-2.5 border border-stone-300 rounded-lg"></div>
-          <div><label class="block font-semibold mb-1">Category</label><select id="newCategory" class="w-full p-2.5 border border-stone-300 rounded-lg"><option value="Spiritual">Spiritual</option><option value="Nature">Nature</option><option value="Modern">Modern Abstract</option><option value="Vintage">Heritage</option></select></div>
-          <div class="grid grid-cols-2 gap-3">
-            <div><label class="block font-semibold mb-1">Moulding Type</label><input type="text" id="newMoulding" required placeholder="e.g. Gilded Carved Gold" class="w-full p-2.5 border border-stone-300 rounded-lg"></div>
-            <div><label class="block font-semibold mb-1">Size (Inches)</label><input type="text" id="newDimensions" required placeholder="e.g. 18x24 in" class="w-full p-2.5 border border-stone-300 rounded-lg"></div>
-          </div>
-          <div><label class="block font-semibold mb-1">Price in ₹ (INR)</label><input type="number" id="newPrice" required placeholder="1450" class="w-full p-2.5 border border-stone-300 rounded-lg"></div>
-          <div><label class="block font-semibold mb-1">Image URL</label><input type="url" id="newImageUrl" required placeholder="https://images.unsplash.com/..." class="w-full p-2.5 border border-stone-300 rounded-lg"></div>
-          <div class="pt-3 flex gap-2">
-            <button type="button" onclick="closeNewFrameModal()" class="flex-1 py-2 border border-stone-300 rounded-lg font-semibold hover:bg-stone-50">Cancel</button>
-            <button type="submit" class="flex-1 py-2 bg-brand-dark text-white rounded-lg font-semibold hover:bg-brand-gold hover:text-brand-dark transition-colors">Publish to Store</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <footer class="bg-brand-dark text-stone-400 text-xs py-10 border-t border-stone-800">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-      <div><p class="font-serif text-lg font-bold text-white tracking-wider">CHETAN MODERN PHOTOFRAME</p><p class="text-stone-400 mt-1">In Front of Ganesh Mandir, Chola Naka, Bhopal (M.P.)</p></div>
-      <div class="flex items-center gap-6"><a href="#customizer" class="hover:text-brand-gold transition-colors">Bespoke Customizer</a><a href="#uniqueFrameIdea" class="hover:text-brand-gold transition-colors">Pitch Unique Frame</a><a href="#replacementPolicy" class="hover:text-brand-gold transition-colors">Replacement Policy</a><a href="#location" class="hover:text-brand-gold transition-colors">Visit Chola Naka</a></div>
-      <div><p>© 2026 Chetan modern photoframe. Handcrafted in Bhopal.</p></div>
-    </div>
-  </footer>
 
   <script>
     const SUPABASE_PROJECT_URL = "https://zhvbreiarpabcxzjlcny.supabase.co";
@@ -705,6 +613,7 @@
 
     const OWNER_SECURITY_PIN = "9977234854";
     let currentRole = 'customer';
+    let currentAuthMode = 'login'; // 'login', 'signup', or 'forgot'
     let cart = [];
     let authenticatedUser = null;
     let pendingAction = null;
@@ -747,6 +656,280 @@
       { id: "CM-8039", date: "Yesterday, 04:45 PM", customerName: "Pooja Verma", customerEmail: "pooja.chola@gmail.com", customerPhone: "+91 94250 44556", photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80", size: "12x16", itemSummary: "Custom 12x16\" • Royal Gilded Gold", fulfillment: "Store Pickup (Pay at Shop)", price: 1200, status: "Ready for Pickup at Chola" }
     ];
 
+    // ========================================================
+    // AUTHENTICATION TAB CONTROLS
+    // ========================================================
+    function switchAuthTab(mode) {
+      currentAuthMode = mode;
+      const loginTab = document.getElementById('tabLoginBtn');
+      const signupTab = document.getElementById('tabSignupBtn');
+      const signupFields = document.getElementById('signupFieldsContainer');
+      const passwordContainer = document.getElementById('passwordFieldContainer');
+      const passwordLabel = document.getElementById('authPasswordLabel');
+      const passwordReqs = document.getElementById('passwordRequirements');
+      const forgotBtn = document.getElementById('forgotPasswordBtn');
+      const heading = document.getElementById('authModalHeading');
+      const subheading = document.getElementById('authModalSubheading');
+      const submitText = document.getElementById('authSubmitBtnText');
+      const nameInput = document.getElementById('signupFullNameInput');
+      const phoneInput = document.getElementById('signupPhoneInput');
+      const passwordInput = document.getElementById('authPasswordInput');
+      const tabsContainer = document.getElementById('authTabsContainer');
+      const formView = document.getElementById('authFormView');
+      const sentView = document.getElementById('authStepSent');
+
+      formView.classList.remove('hidden');
+      sentView.classList.add('hidden');
+      tabsContainer.classList.remove('hidden');
+
+      if (mode === 'signup') {
+        signupTab.className = "flex-1 pb-3 text-xs font-bold uppercase tracking-wider text-brand-dark border-b-2 border-brand-gold transition-colors";
+        loginTab.className = "flex-1 pb-3 text-xs font-bold uppercase tracking-wider text-stone-400 border-b-2 border-transparent hover:text-brand-dark transition-colors";
+        signupFields.classList.remove('hidden');
+        passwordContainer.classList.remove('hidden');
+        passwordReqs.classList.remove('hidden');
+        forgotBtn.classList.add('hidden');
+        passwordLabel.innerText = "Create Password *";
+        heading.innerText = "Create Your Account";
+        subheading.innerText = "Sign up to track orders, save custom frame designs, and checkout.";
+        submitText.innerText = "Sign Up & Verify Gmail";
+        if (nameInput) nameInput.required = true;
+        if (phoneInput) phoneInput.required = true;
+        if (passwordInput) passwordInput.required = true;
+      } else if (mode === 'login') {
+        loginTab.className = "flex-1 pb-3 text-xs font-bold uppercase tracking-wider text-brand-dark border-b-2 border-brand-gold transition-colors";
+        signupTab.className = "flex-1 pb-3 text-xs font-bold uppercase tracking-wider text-stone-400 border-b-2 border-transparent hover:text-brand-dark transition-colors";
+        signupFields.classList.add('hidden');
+        passwordContainer.classList.remove('hidden');
+        passwordReqs.classList.add('hidden');
+        forgotBtn.classList.remove('hidden');
+        passwordLabel.innerText = "Password *";
+        heading.innerText = "Customer Login";
+        subheading.innerText = "Enter your registered Gmail and password.";
+        submitText.innerText = "Log In";
+        if (nameInput) nameInput.required = false;
+        if (phoneInput) phoneInput.required = false;
+        if (passwordInput) passwordInput.required = true;
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function switchToForgotFlow() {
+      currentAuthMode = 'forgot';
+      document.getElementById('authTabsContainer').classList.add('hidden');
+      document.getElementById('signupFieldsContainer').classList.add('hidden');
+      document.getElementById('passwordFieldContainer').classList.add('hidden');
+      document.getElementById('authModalHeading').innerText = "Reset Password";
+      document.getElementById('authModalSubheading').innerText = "Enter your Gmail address. We will send a secure password reset link.";
+      document.getElementById('authSubmitBtnText').innerText = "Send Password Reset Link";
+      document.getElementById('authPasswordInput').required = false;
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // ========================================================
+    // SUPABASE AUTH SUBMIT HANDLER
+    // ========================================================
+    async function handleCustomerAuthSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('authEmailInput')?.value.trim();
+      const password = document.getElementById('authPasswordInput')?.value;
+      const submitBtn = document.getElementById('authSubmitBtn');
+
+      if (!supabaseClient) {
+        alert("Supabase client is not initialized.");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      const originalText = document.getElementById('authSubmitBtnText').innerText;
+      document.getElementById('authSubmitBtnText').innerText = "Processing...";
+
+      try {
+        const currentUrl = window.location.origin + window.location.pathname;
+
+        // 1. SIGN UP WITH PASSWORD + GMAIL VERIFICATION
+        if (currentAuthMode === 'signup') {
+          const name = document.getElementById('signupFullNameInput')?.value.trim();
+          const phone = document.getElementById('signupPhoneInput')?.value.trim();
+
+          const { data, error } = await supabaseClient.auth.signUp({
+            email: email,
+            password: password,
+            options: {
+              emailRedirectTo: currentUrl,
+              data: {
+                full_name: name,
+                phone: phone
+              }
+            }
+          });
+
+          if (error) throw error;
+
+          // If email confirmation is required by Supabase
+          if (data?.user && (!data.session || data.user.identities?.length === 0)) {
+            showSentScreen(email, "Check Your Email!", "We sent an activation link to verify your account. Please click the link to confirm your Gmail.");
+          } else {
+            authenticatedUser = {
+              email: data.user.email,
+              verified: true,
+              session: data.session,
+              fullName: name,
+              phone: phone
+            };
+            onAuthSuccess(email);
+          }
+
+        // 2. INSTANT LOGIN WITH GMAIL + PASSWORD (NO EMAIL NEEDED)
+        } else if (currentAuthMode === 'login') {
+          const { data, error } = await supabaseClient.auth.signInWithPassword({
+            email: email,
+            password: password
+          });
+
+          if (error) throw error;
+
+          authenticatedUser = {
+            email: data.user.email,
+            verified: true,
+            session: data.session,
+            fullName: data.user.user_metadata?.full_name || '',
+            phone: data.user.user_metadata?.phone || ''
+          };
+          onAuthSuccess(email);
+
+        // 3. FORGOT PASSWORD FLOW
+        } else if (currentAuthMode === 'forgot') {
+          const { data, error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+            redirectTo: currentUrl
+          });
+
+          if (error) throw error;
+          showSentScreen(email, "Reset Link Sent!", "Check your Gmail for the password recovery link. Click it to choose a new password.");
+        }
+
+      } catch (err) {
+        alert(`⚠️ Authentication Notice: ${err.message || 'Error occurred during authentication.'}`);
+      } finally {
+        submitBtn.disabled = false;
+        document.getElementById('authSubmitBtnText').innerText = originalText;
+      }
+    }
+
+    function showSentScreen(email, heading, message) {
+      document.getElementById('authFormView').classList.add('hidden');
+      document.getElementById('authTabsContainer').classList.add('hidden');
+      document.getElementById('sentStepHeading').innerText = heading;
+      document.getElementById('displayTargetEmail').innerText = email;
+      document.getElementById('sentStepMessage').innerText = message;
+      document.getElementById('authStepSent').classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function onAuthSuccess(email) {
+      updateAuthHeaderUI();
+      closeAuthModal();
+      alert(`🎉 Welcome! Logged in as ${authenticatedUser.fullName || email}`);
+
+      if (pendingAction === 'submitCustomOrder') triggerCheckoutModal('custom');
+      else if (pendingAction === 'cartCheckout') triggerCheckoutModal('cart');
+    }
+
+    async function checkIncomingEmailConfirmation() {
+      if (!supabaseClient) return;
+
+      // 1. Check existing session
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (session && session.user) {
+        authenticatedUser = { 
+          email: session.user.email, 
+          verified: true, 
+          session: session,
+          fullName: session.user.user_metadata?.full_name || '',
+          phone: session.user.user_metadata?.phone || ''
+        };
+        updateAuthHeaderUI();
+        return;
+      }
+
+      // 2. Auth state listener for email link clicks (signup confirmation or password reset)
+      supabaseClient.auth.onAuthStateChange(async (event, session) => {
+        if (event === 'SIGNED_IN' && session && session.user) {
+          authenticatedUser = { 
+            email: session.user.email, 
+            verified: true, 
+            session: session,
+            fullName: session.user.user_metadata?.full_name || '',
+            phone: session.user.user_metadata?.phone || ''
+          };
+          updateAuthHeaderUI();
+          closeAuthModal();
+          if (window.location.hash) {
+            window.history.replaceState(null, null, window.location.pathname + window.location.search);
+          }
+          alert(`🎉 Email verified successfully! Welcome, ${session.user.user_metadata?.full_name || session.user.email}`);
+          if (pendingAction === 'submitCustomOrder') triggerCheckoutModal('custom');
+          else if (pendingAction === 'cartCheckout') triggerCheckoutModal('cart');
+        } else if (event === 'PASSWORD_RECOVERY') {
+          // User clicked reset password link
+          const newPass = prompt("🔑 Enter your new password (at least 6 characters):");
+          if (newPass && newPass.length >= 6) {
+            const { error } = await supabaseClient.auth.updateUser({ password: newPass });
+            if (!error) {
+              alert("✅ Password updated successfully! You can now log in with your new password.");
+            } else {
+              alert(`❌ Error updating password: ${error.message}`);
+            }
+          }
+        }
+      });
+    }
+
+    function openAuthModal(defaultMode = 'login', pendingIntent = null) {
+      pendingAction = pendingIntent;
+      switchAuthTab(defaultMode);
+      document.getElementById('authModal').classList.remove('hidden');
+    }
+
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.add('hidden');
+      pendingAction = null;
+    }
+
+    function signOutUser() {
+      if (supabaseClient) supabaseClient.auth.signOut();
+      authenticatedUser = null;
+      updateAuthHeaderUI();
+      alert("You have signed out.");
+    }
+
+    function updateAuthHeaderUI() {
+      const container = document.getElementById('authHeaderContainer');
+      if (!container) return;
+      if (authenticatedUser) {
+        const displayName = authenticatedUser.fullName || authenticatedUser.email.split('@')[0];
+        container.innerHTML = `
+          <div class="flex items-center gap-2 bg-stone-100 px-3 py-1.5 rounded-lg border border-stone-200">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span class="text-xs font-semibold text-brand-dark">${displayName}</span>
+            <span class="text-[10px] text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded font-bold">Logged In</span>
+            <button onclick="signOutUser()" class="text-[10px] text-stone-400 hover:text-red-500 ml-1 font-semibold" title="Sign out">✕</button>
+          </div>
+        `;
+      } else {
+        container.innerHTML = `
+          <button onclick="openAuthModal('login')" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-stone-300 hover:border-brand-gold text-brand-dark bg-white transition-all">
+            <i data-lucide="user" class="w-3.5 h-3.5 text-brand-gold"></i>
+            <span>Login / Sign Up</span>
+          </button>
+        `;
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // ========================================================
+    // PAYMENT SETUP & OWNER CONTROLS
+    // ========================================================
     function syncOwnerPaymentUI() {
       const upiInput = document.getElementById('ownerUpiIdInput');
       if (upiInput) upiInput.value = shopPaymentConfig.upiId;
@@ -958,123 +1141,10 @@
       renderOwnerTables();
     }
 
-    async function handleSendRealSupabaseMagicLink(e) {
-      e.preventDefault();
-      const emailInput = document.getElementById('authEmailInput');
-      if (!emailInput) return;
-      const email = emailInput.value.trim();
-      const submitBtn = document.getElementById('sendOtpSubmitBtn');
-      if (submitBtn) { submitBtn.disabled = true; submitBtn.innerText = "Sending Confirmation Link..."; }
-
-      try {
-        if (!supabaseClient) throw new Error("Supabase client not initialized.");
-        const currentUrl = window.location.origin + window.location.pathname;
-        const { data, error } = await supabaseClient.auth.signInWithOtp({
-          email: email,
-          options: { emailRedirectTo: currentUrl, shouldCreateUser: true }
-        });
-        if (error) throw error;
-        const displayEmail = document.getElementById('displayTargetEmail');
-        if (displayEmail) displayEmail.innerText = email;
-        const emailStep = document.getElementById('authStepEmail');
-        if (emailStep) emailStep.classList.add('hidden');
-        const sentStep = document.getElementById('authStepSent');
-        if (sentStep) sentStep.classList.remove('hidden');
-      } catch (err) {
-        alert(`⚠️ Supabase Notice: ${err.message || 'Error sending confirmation email'}`);
-      } finally {
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerText = "Send Confirmation Link to My Email"; }
-      }
-    }
-
-    function handleResendMagicLink() {
-      const email = document.getElementById('authEmailInput')?.value.trim();
-      if (email && supabaseClient) {
-        supabaseClient.auth.signInWithOtp({
-          email: email,
-          options: { emailRedirectTo: window.location.origin + window.location.pathname }
-        });
-        alert(`A new confirmation link has been sent to ${email}.`);
-      }
-    }
-
-    async function checkIncomingEmailConfirmation() {
-      if (!supabaseClient) return;
-      const { data: { session } } = await supabaseClient.auth.getSession();
-      if (session && session.user) {
-        authenticatedUser = { email: session.user.email, verified: true, session: session };
-        updateAuthHeaderUI();
-        return;
-      }
-      supabaseClient.auth.onAuthStateChange((event, session) => {
-        if (event === 'SIGNED_IN' && session && session.user) {
-          authenticatedUser = { email: session.user.email, verified: true, session: session };
-          updateAuthHeaderUI();
-          closeAuthModal();
-          if (window.location.hash) {
-            window.history.replaceState(null, null, window.location.pathname + window.location.search);
-          }
-          alert(`🎉 Email Confirmed Successfully! Welcome, ${session.user.email}`);
-          if (pendingAction === 'submitCustomOrder') triggerCheckoutModal('custom');
-          else if (pendingAction === 'cartCheckout') triggerCheckoutModal('cart');
-        }
-      });
-    }
-
-    function openAuthModal(pendingIntent = null) {
-      pendingAction = pendingIntent;
-      const modal = document.getElementById('authModal');
-      if (modal) modal.classList.remove('hidden');
-      resetAuthFlow();
-    }
-
-    function closeAuthModal() {
-      const modal = document.getElementById('authModal');
-      if (modal) modal.classList.add('hidden');
-      pendingAction = null;
-    }
-
-    function resetAuthFlow() {
-      const emailStep = document.getElementById('authStepEmail');
-      if (emailStep) emailStep.classList.remove('hidden');
-      const sentStep = document.getElementById('authStepSent');
-      if (sentStep) sentStep.classList.add('hidden');
-    }
-
-    function signOutUser() {
-      if (supabaseClient) supabaseClient.auth.signOut();
-      authenticatedUser = null;
-      updateAuthHeaderUI();
-      alert("You have signed out.");
-    }
-
-    function updateAuthHeaderUI() {
-      const container = document.getElementById('authHeaderContainer');
-      if (!container) return;
-      if (authenticatedUser) {
-        container.innerHTML = `
-          <div class="flex items-center gap-2 bg-stone-100 px-3 py-1.5 rounded-lg border border-stone-200">
-            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-            <span class="text-xs font-semibold text-brand-dark">${authenticatedUser.email.split('@')[0]}</span>
-            <span class="text-[10px] text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded font-bold">Verified</span>
-            <button onclick="signOutUser()" class="text-[10px] text-stone-400 hover:text-red-500 ml-1 font-semibold" title="Sign out">✕</button>
-          </div>
-        `;
-      } else {
-        container.innerHTML = `
-          <button onclick="openAuthModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-stone-300 hover:border-brand-gold text-brand-dark bg-white transition-all">
-            <i data-lucide="mail" class="w-3.5 h-3.5 text-brand-gold"></i>
-            <span>Customer Login</span>
-          </button>
-        `;
-      }
-      if (window.lucide) lucide.createIcons();
-    }
-
     function handleCustomOrderClick() {
       if (!authenticatedUser) {
-        alert("🔒 Please confirm your Gmail first.");
-        openAuthModal('submitCustomOrder');
+        alert("🔒 Please log in or sign up first to order.");
+        openAuthModal('login', 'submitCustomOrder');
       } else {
         triggerCheckoutModal('custom');
       }
@@ -1083,8 +1153,8 @@
     function startCheckoutFromCart() {
       if (cart.length === 0) { alert("Your cart is empty!"); return; }
       if (!authenticatedUser) {
-        alert("🔒 Please confirm your Gmail first.");
-        openAuthModal('cartCheckout');
+        alert("🔒 Please log in or sign up first to checkout.");
+        openAuthModal('login', 'cartCheckout');
       } else {
         toggleCart(false);
         triggerCheckoutModal('cart');
@@ -1116,6 +1186,13 @@
       document.getElementById('checkoutUserEmail').innerText = authenticatedUser?.email || "verified@customer.com";
       document.getElementById('checkoutTotalAmount').innerText = `₹${currentCheckoutContext.price.toLocaleString('en-IN')}`;
       document.getElementById('submitOrderBtnText').innerText = `Confirm & Pay Online (₹${currentCheckoutContext.price.toLocaleString('en-IN')})`;
+
+      if (authenticatedUser?.fullName) {
+        document.getElementById('custFullName').value = authenticatedUser.fullName;
+      }
+      if (authenticatedUser?.phone) {
+        document.getElementById('custPhone').value = authenticatedUser.phone;
+      }
       
       toggleFulfillmentMode('delivery');
       syncOwnerPaymentUI();
